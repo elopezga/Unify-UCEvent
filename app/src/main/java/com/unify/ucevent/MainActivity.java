@@ -22,7 +22,9 @@ public class MainActivity extends ActionBarActivity {
         /*Parse.enableLocalDatastore(this);
         Parse.initialize(this, "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn",
                                "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF");*/
-
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn", "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
         // Test Parse SDK
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
