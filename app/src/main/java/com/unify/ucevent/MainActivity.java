@@ -19,9 +19,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Enables Parse Local Datastore - Connects to UCEvent
         // Login: ssdai@ucsd.edu
-        /*Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn",
-                               "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF");*/
+
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn", "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF");
         ParseInstallation.getCurrentInstallation().saveInBackground();
