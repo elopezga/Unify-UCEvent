@@ -1,2 +1,3 @@
 # Unify-UCEvent
-Sandra's repo in private mode. Swag.
+![alt text](http://i.imgur.com/ruaJsJF.png "Swag ass UCEvent App")
+UCEvent is swag.
