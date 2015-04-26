@@ -3,7 +3,8 @@ package com.unify.ucevent;
 import android.app.Application;
 import com.parse.*;
 
-public class ParsePushApp extends Application{
+public class ParsePushApp extends Application {
+    //Initializing Parse and stuff for our app
     @Override
     public void onCreate() {
         super.onCreate();
