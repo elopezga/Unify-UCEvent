@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UCEvent.iml" filepath="$PROJECT_DIR$/UCEvent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unify-UCEvent.iml" filepath="$PROJECT_DIR$/Unify-UCEvent.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
