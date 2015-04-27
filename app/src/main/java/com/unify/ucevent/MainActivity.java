@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.app.Activity;
+import android.content.Intent;
+
+
 import com.parse.*;
 
 //added a comment
@@ -50,6 +54,8 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            ParseUser.getCurrentUser().logOut();
+            startActivity(new Intent(MainActivity.this, DispatchActivity.class));
             return true;
         }
 
