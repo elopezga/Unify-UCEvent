@@ -15,18 +15,21 @@ public class MainActivity extends ActionBarActivity {
     public void onCreate() {
         // Enables Parse Local Datastore - Connects to UCEvent
         // Login: ssdai@ucsd.edu
+        // PW: Cse110Unify
 
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn", "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF");
-        // Test Parse SDK
+        /* Test Parse SDK
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
-        testObject.saveInBackground();
+        testObject.saveInBackground();*/
 
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ParseFacebookUtils.initialize(getApplicationContext());
+
         setContentView(R.layout.activity_main);
     }
 
