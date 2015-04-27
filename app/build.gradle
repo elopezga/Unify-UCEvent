@@ -25,4 +25,5 @@ dependencies {
     compile files('libs/Parse-1.9.1.jar')
     compile 'com.parse.bolts:bolts-android:1.+'
     compile fileTree(dir: 'libs', include: 'Parse-*.jar')
+    compile files('libs/ParseFacebookUtilsV4-1.9.1.jar')
 }
