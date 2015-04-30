@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import android.app.Activity;
-import android.content.Intent;
-
 
 import com.parse.*;
 
@@ -23,6 +20,7 @@ public class MainActivity extends ActionBarActivity {
 
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn", "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF");
+        Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
         /* Test Parse SDK
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
@@ -54,8 +52,6 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            ParseUser.getCurrentUser().logOut();
-            startActivity(new Intent(MainActivity.this, DispatchActivity.class));
             return true;
         }
 
