@@ -20,10 +20,17 @@
         android:layout_toRightOf="@+id/event_title_label" />
 
     <Button
+        android:id="@+id/submit_button"
         android:text="Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/event_title_content"
-        android:onClick="uploadData"/>
+        android:layout_below="@+id/event_title_content" />
+
+    <Button
+        android:text="Edit Event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/submit_button"
+        android:onClick="openEditEvent"/>
 
 </RelativeLayout>

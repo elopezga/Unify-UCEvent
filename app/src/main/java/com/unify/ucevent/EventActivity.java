@@ -1,9 +1,11 @@
 package com.unify.ucevent;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.parse.*;
@@ -24,7 +26,7 @@ public class EventActivity extends ActionBarActivity {
         ParseObject.registerSubclass(Event.class);
         Parse.initialize(this,PARSE_APP_ID,PARSE_CLIENT_KEY);
         event = new Event();
-        setContent(event); // Have to test this!!!!!
+        setContent(event);
     }
 
 
@@ -58,5 +60,10 @@ public class EventActivity extends ActionBarActivity {
 
     public void uploadData( Event event){
         event.upload();
+    }
+
+    public void openEditEvent(View view){
+        Intent intent = new Intent(this, EditEventActivity.class);
+        startActivity(intent);
     }
 }
