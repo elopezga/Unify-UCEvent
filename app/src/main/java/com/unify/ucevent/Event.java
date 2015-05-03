@@ -35,6 +35,16 @@ public class Event extends ParseObject{
         //saveInBackground();
     }
 
+    public Event( String t, String l, String ti, String d, String c) {
+        super();
+        title = t;
+        location = l;
+        time = ti;
+        description = d;
+        category = c;
+        numGoing = 0;
+    }
+
     /****************Getter Methods******************/
     public String getTitle(){return title;}
     public String getLocation(){return location;}

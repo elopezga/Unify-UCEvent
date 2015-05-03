@@ -7,11 +7,32 @@
 
 
     <Button
-        android:id="@+id/test_event"
-        android:text="Test Event"
+        android:id="@+id/event_tab"
+        android:text="Events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="changeEventList"
+    />
+
+    <Button
+        android:id="@+id/my_event_tab"
+        android:text="My Events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="changeMyEventList"
+        />
+
+    <Button
+        android:id="@+id/new_event"
+        android:text="New Event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="openEvent"
+        android:layout_alignParentBottom="true"
+        android:onClick="newEvent"
     />
 
 </RelativeLayout>

@@ -37,7 +37,7 @@ public class SampleDispatchActivity extends ParseLoginDispatchActivity {
   @Override
   protected Class<?> getTargetClass() {
 
-    // Add code to print out the key hash
+    /*// Add code to print out the key hash
     try {
       PackageInfo info = getPackageManager().getPackageInfo(
               "com.facebook.samples.hellofacebook",
@@ -51,8 +51,9 @@ public class SampleDispatchActivity extends ParseLoginDispatchActivity {
 
     } catch (NoSuchAlgorithmException e) {
 
-    }
+    } */
 
-    return SampleProfileActivity.class;
+    return MainActivity.class;
+    //SampleProfileActivity.class;
   }
 }

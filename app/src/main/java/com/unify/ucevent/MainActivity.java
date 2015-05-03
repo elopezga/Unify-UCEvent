@@ -75,5 +75,17 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void changeEventList(View view){
+        // Change to event list xml/activity
+    }
+
+    public void changeMyEventList(View view) {
+        // Change to my event list xml/activity
+    }
+
+    public void newEvent( View view ) {
+        Intent intent = new Intent(this, EventActivity.class);
+        startActivity(intent);
+    }
 
 }

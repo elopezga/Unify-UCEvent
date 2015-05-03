@@ -7,10 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.parse.*;
 
+/* Activity to Make New Event */
 
 public class EventActivity extends ActionBarActivity {
 
@@ -29,7 +31,7 @@ public class EventActivity extends ActionBarActivity {
         //event = new Event();
         //event = new Event();
         //event.put("Title","bullshit");
-        uploadData(event);
+        /*uploadData(event);
         setContent(event);
         event.saveInBackground();
 
@@ -40,7 +42,7 @@ public class EventActivity extends ActionBarActivity {
             public void onClick(View v) {
                 uploadData(event);
             }
-        });
+        }); */
 
     }
 
@@ -69,7 +71,7 @@ public class EventActivity extends ActionBarActivity {
 
 
     public void setContent( Event event ){
-        TextView titleText = (TextView) findViewById(R.id.event_title_content);
+        TextView titleText = (TextView) findViewById(R.id.event_title);
         titleText.setText(event.getTitle());
     }
 
@@ -79,6 +81,48 @@ public class EventActivity extends ActionBarActivity {
 
     public void openEditEvent(View view){
         Intent intent = new Intent(this, EditEventActivity.class);
+        startActivity(intent);
+    }
+
+    /* Create new event object based on provided texts
+     * Push Event to parse database
+     * Send back to main page
+     */
+    public void submit( View view ) {
+        EditText title = (EditText)findViewById(R.id.event_title);
+        String titleText = title.getText().toString();
+
+        EditText description = (EditText)findViewById(R.id.event_description);
+        String descriptionText = description.getText().toString();
+
+        EditText time = (EditText)findViewById(R.id.event_time);
+        String timeText = time.getText().toString();
+
+        EditText location = (EditText)findViewById(R.id.event_location);
+        String locationText = location.getText().toString();
+
+        EditText category = (EditText)findViewById(R.id.event_category);
+        String categoryText = category.getText().toString();
+
+        // Check if title, time, and location are empty
+        // If so, print error message and quit
+
+        //Event newEvent = new Event( titleText, locationText, timeText, descriptionText, categoryText);
+        //newEvent.upload();
+
+        /**** I've tested both ways (above and below this comment) and in both instances
+         * events are not being pushed to the parse database ****/
+
+        event.setTime(timeText);
+        event.setCategory(categoryText);
+        event.setDescription(descriptionText);
+        event.setLocation(locationText);
+        event.setTitle(titleText);
+        event.setNumGoing(0);
+
+        uploadData(event);
+
+        Intent intent = new Intent( this, MainActivity.class );
         startActivity(intent);
     }
 
