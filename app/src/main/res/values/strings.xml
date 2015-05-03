@@ -50,7 +50,8 @@
     <string name="sign_in">Sign In</string>
 
     <!-- Strings for Facebook Integration -->
-    <string name ="facebook_app_id">745500472229380</string>
+    <!-- Han's FB Dev ID string name ="facebook_app_id">745500472229380</string-->
+    <string name="facebook_app_id">1482728195350912</string>
 
     <!-- Strings for Updating Parse Acc Details -->
     <string name ="Update">Update</string>
