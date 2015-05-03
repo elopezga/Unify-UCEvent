@@ -38,6 +38,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+
         
         /*
         ParseObject testObject = new ParseObject("TestObject");
