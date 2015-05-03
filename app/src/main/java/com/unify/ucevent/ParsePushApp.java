@@ -16,6 +16,7 @@ public class ParsePushApp extends Application {
         Parse.enableLocalDatastore(this);
         ParseObject.registerSubclass(Event.class);
         Parse.initialize(this, PARSE_APP_ID, PARSE_CLIENT_KEY);
+        ParseFacebookUtils.initialize(this);
 
         //ParseInstallation.getCurrentInstallation().saveInBackground();
 
