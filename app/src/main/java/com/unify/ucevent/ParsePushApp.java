@@ -13,8 +13,10 @@ public class ParsePushApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Parse.enableLocalDatastore(this); //
+        Parse.enableLocalDatastore(this);
+        ParseObject.registerSubclass(Event.class);
         Parse.initialize(this, PARSE_APP_ID, PARSE_CLIENT_KEY);
+
         //ParseInstallation.getCurrentInstallation().saveInBackground();
 
         // Test Parse SDK

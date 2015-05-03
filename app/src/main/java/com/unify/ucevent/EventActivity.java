@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.parse.*;
@@ -13,7 +14,7 @@ import com.parse.*;
 
 public class EventActivity extends ActionBarActivity {
 
-    Event event;
+    Event event = Globals.event;
 
     String PARSE_APP_ID = "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn";
     String PARSE_CLIENT_KEY = "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF";
@@ -23,10 +24,24 @@ public class EventActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        ParseObject.registerSubclass(Event.class);
-        Parse.initialize(this,PARSE_APP_ID,PARSE_CLIENT_KEY);
-        event = new Event();
+        //ParseObject.registerSubclass(Event.class);
+        //Parse.initialize(this,PARSE_APP_ID,PARSE_CLIENT_KEY);
+        //event = new Event();
+        //event = new Event();
+        //event.put("Title","bullshit");
+        uploadData(event);
         setContent(event);
+        event.saveInBackground();
+
+
+        Button submitButton = (Button) findViewById(R.id.submit_button);
+        submitButton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uploadData(event);
+            }
+        });
+
     }
 
 
@@ -66,4 +81,5 @@ public class EventActivity extends ActionBarActivity {
         Intent intent = new Intent(this, EditEventActivity.class);
         startActivity(intent);
     }
+
 }

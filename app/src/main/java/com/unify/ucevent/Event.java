@@ -51,11 +51,12 @@ public class Event extends ParseObject{
 
     /* Upload the current state of the Event method to the database */
     public void upload(){
-        this.put("Title",title);
-        this.put("Location",location);
-        this.put("Time",time);
-        this.put("NumGoing",numGoing);
-        this.put("Description",description);
-        this.put("Category",category);
+        put("Title",title);
+        put("Location",location);
+        put("Time",time);
+        put("NumGoing",numGoing);
+        put("Description",description);
+        put("Category",category);
+
     }
 }

@@ -31,7 +31,7 @@
             android:label="@string/app_name"
             android:launchMode="singleTop" >
 
-            
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -44,7 +44,6 @@
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
@@ -128,10 +127,6 @@
             </intent-filter>
         </receiver>
 
-        <activity
-            android:name=".EditEventActivity"
-            android:label="@string/title_activity_edit_event" >
-        </activity>
     </application>
 
 </manifest>
