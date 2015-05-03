@@ -62,7 +62,8 @@
     <string name="profile_title_logged_in">Your are logged in as</string>
     <string name="profile_logout_button_label">Log out</string>
     <string name="title_activity_edit_event">EditEventActivity</string>
-
+    <string name="title_activity_signup">signup</string>
+    <string name="yup">I accept the terms and conditions.</string>
 
 
 </resources>
