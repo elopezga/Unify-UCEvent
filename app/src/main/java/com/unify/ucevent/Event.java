@@ -18,6 +18,7 @@ public class Event extends ParseObject{
     private int numGoing;
     private String description;
     private String category;
+    //private ParseACL ACL;
 
 
     public Event(){
@@ -28,6 +29,10 @@ public class Event extends ParseObject{
         numGoing = -1;
         description = "Just do you, man";
         category = "You";
+        //ACL = new ParseACL();
+        //ACL.setWriteAccess(ParseUser.getCurrentUser(),true);
+        //setACL(ACL);
+        //saveInBackground();
     }
 
     /****************Getter Methods******************/
