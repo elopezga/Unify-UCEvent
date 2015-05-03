@@ -18,7 +18,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:longClickable="true"
+        android:clickable="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,30 +69,42 @@
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="89dp"
-        android:layout_alignRight="@+id/frameLayout"
-        android:layout_alignEnd="@+id/frameLayout"
+        android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/frameLayout"
-        android:layout_marginBottom="58dp"
-        android:layout_above="@+id/textView2"
-        android:background="#ff5d5d5d">
+        android:layout_marginTop="93dp"
+        android:background="#ff545454"
+        android:layout_marginBottom="47dp"
+        android:layout_above="@+id/textView2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Login"
-            android:id="@+id/textView3"
-            android:layout_gravity="center"
-            android:textSize="@dimen/abc_text_size_display_1_material" />
+            android:id="@+id/textView5"
+            android:layout_toRightOf="@+id/textView3"
+            android:layout_toEndOf="@+id/textView3"
+            android:textSize="@dimen/abc_text_size_display_1_material"
+            android:layout_alignTop="@+id/textView3"
+            android:paddingStart="10dp"
+            android:layout_above="@+id/textView2"
+            android:layout_gravity="center" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="&lt; Go Back"
-            android:id="@+id/textView5"
-            android:layout_gravity="left|center_vertical"
-            android:textSize="@dimen/abc_text_size_large_material" />
+            android:layout_height="57dp"
+            android:text="&lt;Go Back"
+            android:id="@+id/textView3"
+            android:layout_above="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="49dp"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:paddingEnd="20dp"
+            android:paddingStart="0dp"
+            android:paddingTop="25dp"
+            android:longClickable="true"
+            android:clickable="true" />
+
     </FrameLayout>
 
     <TextView
@@ -101,7 +115,19 @@
         android:layout_below="@+id/editText2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="40dp"
         android:textSize="@dimen/abc_text_size_display_1_material" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2" />
 
 </RelativeLayout>
