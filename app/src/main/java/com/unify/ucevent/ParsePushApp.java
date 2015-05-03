@@ -27,11 +27,28 @@ public class ParsePushApp extends Application {
         Parse.initialize(this, PARSE_APP_ID, PARSE_CLIENT_KEY);
         ParseFacebookUtils.initialize(this);
 
-
+        genHashKey();
         //ParseInstallation.getCurrentInstallation().saveInBackground();
 
         // Test Parse SDK
 
     }
 
+    public void genHashKey() {
+        // Add code to print out the key hash
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "com.facebook.samples.hellofacebook",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("******KEYHASH******", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
+    }
 }
