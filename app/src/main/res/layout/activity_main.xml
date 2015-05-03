@@ -7,11 +7,11 @@
 
 
     <Button
-        android:id="@+id/test_event"
-        android:text="Test Event"
+        android:id="@+id/new_event"
+        android:text="Create New Event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="openEvent"
+        android:onClick="newEvent"
     />
 
 </RelativeLayout>

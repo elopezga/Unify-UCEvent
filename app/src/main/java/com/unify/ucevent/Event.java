@@ -18,6 +18,7 @@ public class Event extends ParseObject{
     private int numGoing;
     private String description;
     private String category;
+    private ParseUser author;
     //private ParseACL ACL;
 
 
@@ -29,6 +30,7 @@ public class Event extends ParseObject{
         numGoing = -1;
         description = "Just do you, man";
         category = "You";
+        author = ParseUser.getCurrentUser();
         //ACL = new ParseACL();
         //ACL.setWriteAccess(ParseUser.getCurrentUser(),true);
         //setACL(ACL);
@@ -43,6 +45,7 @@ public class Event extends ParseObject{
         description = d;
         category = c;
         numGoing = 0;
+        author = ParseUser.getCurrentUser();
     }
 
     /****************Getter Methods******************/
@@ -52,6 +55,7 @@ public class Event extends ParseObject{
     public int getNumGoing(){return numGoing;}
     public String getDescription(){return description;}
     public String getCategory(){return category;}
+    public ParseUser getAuthor(){ return author; }
 
     /****************Setter Methods*****************/
     public void setTitle(String ttl){title=ttl;}
@@ -72,6 +76,7 @@ public class Event extends ParseObject{
         put("NumGoing",numGoing);
         put("Description",description);
         put("Category",category);
+        put("Author", author);
 
     }
 }

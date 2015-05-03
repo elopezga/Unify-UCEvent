@@ -6,17 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.parse.*;
-
-/* Activity to Make New Event */
+/* ACTIVITY TO MAKE NEW EVENT */
 
 public class EventActivity extends ActionBarActivity {
 
-    Event event = Globals.event;
+    //Event event = Globals.event;
 
     String PARSE_APP_ID = "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn";
     String PARSE_CLIENT_KEY = "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF";
@@ -24,7 +21,7 @@ public class EventActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event);
+        setContentView(R.layout.activity_new_event);
 
         //ParseObject.registerSubclass(Event.class);
         //Parse.initialize(this,PARSE_APP_ID,PARSE_CLIENT_KEY);
@@ -107,20 +104,20 @@ public class EventActivity extends ActionBarActivity {
         // Check if title, time, and location are empty
         // If so, print error message and quit
 
-        //Event newEvent = new Event( titleText, locationText, timeText, descriptionText, categoryText);
-        //newEvent.upload();
+        Event newEvent = new Event( titleText, locationText, timeText, descriptionText, categoryText);
+        newEvent.upload();
 
-        /**** I've tested both ways (above and below this comment) and in both instances
-         * events are not being pushed to the parse database ****/
-
-        event.setTime(timeText);
+        /*event.setTime(timeText);
         event.setCategory(categoryText);
         event.setDescription(descriptionText);
         event.setLocation(locationText);
         event.setTitle(titleText);
         event.setNumGoing(0);
 
-        uploadData(event);
+        uploadData(event);*/
+
+        // Make sure to always call saveInBackground after uploading event object!!
+        newEvent.saveInBackground();
 
         Intent intent = new Intent( this, MainActivity.class );
         startActivity(intent);

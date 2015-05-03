@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.unify.ucevent.EventActivity">
+
+    <EditText
+        android:id="@+id/event_title"
+        android:hint="Enter Event Title..."
+        android:textColorHint="@color/material_blue_grey_800"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/event_description"
+        android:hint="Enter Event Description (optional)"
+        android:textColorHint="@color/material_blue_grey_800"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_title"/>
+
+    <EditText
+        android:id="@+id/event_time"
+        android:hint="Enter Start Time-Format ##:## pm"
+        android:textColorHint="@color/material_blue_grey_800"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_description"/>
+
+    <EditText
+        android:id="@+id/event_location"
+        android:hint="Enter Event Location..."
+        android:textColorHint="@color/material_blue_grey_800"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_time"/>
+
+    <EditText
+        android:id="@+id/event_category"
+        android:hint="Enter Event Category"
+        android:textColorHint="@color/material_blue_grey_800"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_location"/>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:text="Submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:onClick="submit"/>
+
+    <Button
+        android:text="Edit Event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="openEditEvent"/>
+
+</RelativeLayout>
