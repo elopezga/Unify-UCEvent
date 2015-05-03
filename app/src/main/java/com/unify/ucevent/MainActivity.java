@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import com.parse.*;
 
 public class MainActivity extends ActionBarActivity {
 
+    /*
     public void onCreate() {
         // Enables Parse Local Datastore - Connects to UCEvent
         // Login: ssdai@ucsd.edu
@@ -23,18 +25,26 @@ public class MainActivity extends ActionBarActivity {
 
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "62Yg7BmL5VctbBBlYDiIutmcp3NwJSIXkzOIKMTn", "0uyGE5SGTg7szwgz9ZetTzBpD5wcR2pu6vKqgOSF");
+        Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
         /* Test Parse SDK
         ParseObject testObject = new ParseObject("TestObject");
         testObject.put("foo", "bar");
-        testObject.saveInBackground();*/
+        testObject.saveInBackground();
 
-    }
+    }*/
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ParseFacebookUtils.initialize(getApplicationContext());
 
         setContentView(R.layout.activity_main);
+        
+        /*
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("hi", "bar");
+        testObject.saveInBackground();
+        //onCreate(); // Call Parse test object
+        */
     }
 
 
@@ -54,11 +64,16 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            ParseUser.getCurrentUser().logOut();
-            startActivity(new Intent(MainActivity.this, DispatchActivity.class));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void openEvent(View view){
+        Intent intent = new Intent(this, EventActivity.class);
+        startActivity(intent);
+    }
+
+
 }

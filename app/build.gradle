@@ -33,4 +33,7 @@ dependencies {
     //compile files('libs/ParseFacebookUtilsV4-1.9.1.jar')
 
     compile 'com.facebook.android:facebook-android-sdk:4.0.0'
+    // Module dependency on ParseLoginUI library sources
+    compile project(':ParseLoginUI')
 }
+
