@@ -64,6 +64,13 @@
     <string name="title_activity_edit_event">EditEventActivity</string>
     <string name="title_activity_signup">signup</string>
     <string name="yup">I accept the terms and conditions.</string>
-
+    <string name="app_logo">UCEvent</string>
+    <string name="setting_ic">ic</string>
+    <string name="add_new">addNew</string>
+    <string name="Previous_button">Previous_button</string>
+    <string name="Go_back">Go Back</string>
+    <string name="Edit_event">Edit Event</string>
+    <string name="Title_edit">Title:</string>
+    <string name="new_event">New Event</string>
 
 </resources>
