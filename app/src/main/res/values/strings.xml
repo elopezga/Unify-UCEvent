@@ -73,5 +73,6 @@
     <string name="Title_edit">Title:</string>
     <string name="new_event">New Event</string>
     <string name="title_activity_categories">categories</string>
+    <string name="title_activity_events_popular">events_popular</string>
 
 </resources>
