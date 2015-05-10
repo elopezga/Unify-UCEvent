@@ -74,5 +74,6 @@
     <string name="new_event">New Event</string>
     <string name="title_activity_categories">categories</string>
     <string name="title_activity_events_popular">events_popular</string>
+    <string name="title_activity_home">Home</string>
 
 </resources>
