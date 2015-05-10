@@ -134,6 +134,10 @@
             android:name=".settings"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name=".categories"
+            android:label="@string/title_activity_categories" >
+        </activity>
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="400dp">
+        android:layout_marginBottom="440dp">
 
         <TextView
             android:layout_width="fill_parent"
@@ -45,7 +45,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140dp"
-        android:layout_marginBottom="430dp">
+        android:layout_marginBottom="480dp">
 
         <TextView
             android:layout_width="fill_parent"
@@ -145,8 +145,8 @@
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="400dp"
-        android:layout_marginBottom="40dp">
+        android:layout_marginTop="480dp"
+        android:layout_marginBottom="10dp">
 
 
         <Button

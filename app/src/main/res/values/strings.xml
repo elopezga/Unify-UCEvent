@@ -72,5 +72,6 @@
     <string name="Edit_event">Edit Event</string>
     <string name="Title_edit">Title:</string>
     <string name="new_event">New Event</string>
+    <string name="title_activity_categories">categories</string>
 
 </resources>
