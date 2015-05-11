@@ -1,0 +1,203 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.unify.ucevent.EventActivity"
+    android:clickable="false"
+    android:background="@color/background_material_dark">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height=""
+        android:layout_marginTop="87dp"
+        android:background="#ffffffff"
+        android:layout_alignTop="@+id/frameLayout3"
+        android:layout_alignLeft="@+id/frameLayout3"
+        android:layout_alignStart="@+id/frameLayout3"
+        android:layout_alignBottom="@+id/frameLayout2"
+        android:layout_marginBottom="318dp"
+        android:id="@+id/frameLayout4">
+
+        <ImageView
+            android:layout_width="67dp"
+            android:layout_height="58dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="left|bottom"
+            android:src="@drawable/ic_action_place"
+            android:paddingBottom="20dp"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:layout_width="333dp"
+            android:layout_height="53dp"
+            android:text="Address: For Example: 9525 Genesee Ave. Sandiego, CA , 92121"
+            android:id="@+id/textView19"
+            android:layout_gravity="right|bottom" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/ic_action_time"
+            android:paddingLeft="25dp" />
+
+        <TextView
+            android:layout_width="340dp"
+            android:layout_height="42dp"
+            android:text="New Text"
+            android:id="@+id/textView20"
+            android:layout_gravity="right|center_vertical" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="143dp"
+        android:background="#ffffffff"
+        android:layout_alignTop="@+id/frameLayout4">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="269dp"
+            android:text="Information will be pulled from the data base And put it in the Box down here. All the details of the Event will be stored here."
+            android:id="@+id/textView18"
+            android:layout_gravity="center"
+            android:textSize="@dimen/abc_text_size_large_material" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="559dp"
+        android:background="#ff2689ef"
+        android:id="@+id/frameLayout2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="&lt; Go Back to Events"
+            android:id="@+id/textView16"
+            android:layout_gravity="center"
+            android:clickable="true" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="106dp"
+        android:layout_alignBottom="@+id/frameLayout2"
+        android:layout_marginBottom="421dp"
+        android:background="#ffffffff"
+        android:id="@+id/frameLayout3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title: BBQ at Edgar&apos;s"
+            android:id="@+id/textView17"
+            android:layout_gravity="left|top"
+            android:textSize="@dimen/abc_text_size_display_1_material"
+            android:textColor="#ff000000" />
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="Going!"
+            android:id="@+id/button3"
+            android:layout_gravity="right|bottom"
+            android:textColor="#ffffffff"
+            android:background="#ff36c5fd"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:clickable="true"
+            android:onClick="@string/Update" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="__ Attending!"
+            android:id="@+id/button4"
+            android:layout_gravity="left|bottom"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:background="#ff8e2d91"
+            android:textColor="#ffffffff"
+            android:clickable="true" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ff2689ef"
+        android:layout_above="@+id/frameLayout4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Events"
+            android:id="@+id/textView13"
+            android:layout_gravity="left|bottom"
+            android:paddingLeft="10dp"
+            android:paddingBottom="20dp"
+            android:clickable="true"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="UC Event"
+            android:id="@+id/textView14"
+            android:layout_gravity="center"
+            android:textSize="@dimen/abc_text_size_display_2_material"
+            android:paddingBottom="20dp"
+            android:textColor="#ffffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Events"
+            android:id="@+id/textView15"
+            android:layout_gravity="right|bottom"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:clickable="true"
+            android:textColor="#ffffffff" />
+
+        <ImageButton
+            android:layout_width="37dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageButton4"
+            android:layout_gravity="left|top"
+            android:src="@drawable/ic_action_settings"
+            android:background="#ff2582e0"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton5"
+            android:layout_gravity="right|top"
+            android:src="@drawable/ic_action_new"
+            android:background="#ff2582e1"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp" />
+    </FrameLayout>
+
+</RelativeLayout>
