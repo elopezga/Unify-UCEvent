@@ -64,6 +64,8 @@
     <string name="title_activity_edit_event">EditEventActivity</string>
     <string name="title_activity_signup">signup</string>
     <string name="yup">I accept the terms and conditions.</string>
+
+    <!-- Strings for New/Edit Event Pages -->
     <string name="app_logo">UCEvent</string>
     <string name="setting_ic">ic</string>
     <string name="add_new">addNew</string>
@@ -72,5 +74,29 @@
     <string name="Edit_event">Edit Event</string>
     <string name="Title_edit">Title:</string>
     <string name="new_event">New Event</string>
+    <string name="category">Category:</string>
+    <string name="Date">Date:</string>
+    <string name="Time">Time:</string>
+    <string name="Start">Start</string>
+    <string name="End">End</string>
+    <string name="Location">Location:</string>
+    <string name="Description">Description:</string>
+    <string name="Contact">Contact:</string>
+    <string name="Submit">Submit</string>
+    <string name="hint_location">Enter Event Location...</string>
+    <string name="hint_title">Enter Event Title...</string>
+    <string name="hint_desc">Enter Event Description(optional)...</string>
+    <string name="hint_contact">Enter Email If Different From User Email</string>
+    
+    <string-array name="category_list">
+        <item>Greek Life</item>
+        <item>Free Food</item>
+        <item>Club GBM</item>
+        <item>Fundraiser</item>
+        <item>Guest Speaker</item>
+        <item>Performance</item>
+        <item>Recreational</item>
+        <item>Special Event</item>
+    </string-array>
 
 </resources>

@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 /* ACTIVITY TO MAKE NEW EVENT */
 
@@ -86,35 +90,30 @@ public class EventActivity extends ActionBarActivity {
      * Send back to main page
      */
     public void submit( View view ) {
+
         EditText title = (EditText)findViewById(R.id.event_title);
-        String titleText = title.getText().toString();
-
         EditText description = (EditText)findViewById(R.id.event_description);
-        String descriptionText = description.getText().toString();
-
-        EditText time = (EditText)findViewById(R.id.event_time);
-        String timeText = time.getText().toString();
-
         EditText location = (EditText)findViewById(R.id.event_location);
-        String locationText = location.getText().toString();
+        EditText contact = (EditText)findViewById(R.id.event_contact);
+        DatePicker date = (DatePicker)findViewById(R.id.event_date);
+        TimePicker start = (TimePicker)findViewById(R.id.event_start);
+        TimePicker end = (TimePicker)findViewById(R.id.event_end);
+        Spinner category = (Spinner)findViewById(R.id.event_category);
 
-        EditText category = (EditText)findViewById(R.id.event_category);
-        String categoryText = category.getText().toString();
+        RetrieveEventInput input = new RetrieveEventInput(title, description, location, contact, date, start, end, category);
+
+
 
         // Check if title, time, and location are empty
         // If so, print error message and quit
 
-        Event newEvent = new Event( titleText, locationText, timeText, descriptionText, categoryText);
+        Event newEvent = new Event( input.getTitle(), input.getLocation(), input.getDescription(),
+                            input.getCategory(), input.getContact());
+        newEvent.setDate( input.getEventMonth(), input.getEventDay(), input.getEventYear() );
+        newEvent.setTimes( input.getEventStartHour(), input.getEventStartMinute(),
+                input.getEventEndHour(), input.getEventEndMinute());
         newEvent.upload();
 
-        /*event.setTime(timeText);
-        event.setCategory(categoryText);
-        event.setDescription(descriptionText);
-        event.setLocation(locationText);
-        event.setTitle(titleText);
-        event.setNumGoing(0);
-
-        uploadData(event);*/
 
         // Make sure to always call saveInBackground after uploading event object!!
         newEvent.saveInBackground();

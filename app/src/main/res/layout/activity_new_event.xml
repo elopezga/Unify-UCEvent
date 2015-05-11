@@ -3,7 +3,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.unify.ucevent.EventActivity"
-    android:clickable="false"
     android:background="@color/background_material_dark">
 
     <LinearLayout
@@ -56,7 +55,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout"
         android:layout_alignLeft="@+id/linearLayout"
-        android:layout_alignStart="@+id/editEvent"
         android:background="@color/background_material_dark"
         android:layout_alignRight="@+id/linearLayout"
         android:id="@+id/scroll_layout">
@@ -131,27 +129,38 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText"
+                    android:id="@+id/event_title"
                     android:textColor="#FFFFFFFF"
                     android:textColorHint="#FFFFFFFF"
                     android:textColorLink="#FFFFFFFF"
-                    android:textIsSelectable="true"
-                    android:hint="Enter Event Title..."
+                    android:hint="@string/hint_title"
                     android:backgroundTint="#FFFFFFFF" />
-
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/category_spinner"
-                    android:spinnerMode="dropdown"
-                    android:transitionGroup="false"
-                    android:background="#ff686868" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Date"
+                    android:text="@string/category"
+                    android:id="@+id/category"
+                    android:textColor="#FFFFFFFF"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/event_category"
+                    android:spinnerMode="dropdown"
+                    android:background="#ff686868"
+                    android:entries="@array/category_list"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/Date"
                     android:id="@+id/textView9"
                     android:textColor="#FFFFFFFF"
                     android:layout_marginTop="15dp"
@@ -160,18 +169,19 @@
                 <DatePicker
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/datePicker"
+                    android:id="@+id/event_date"
                     android:datePickerMode="spinner"
                     android:focusableInTouchMode="true"
                     android:spinnersShown="true"
-                    android:calendarViewShown="false" >
+                    android:calendarViewShown="false"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark">
                 </DatePicker>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Time"
+                    android:text="@string/Time"
                     android:id="@+id/textView10"
                     android:textColor="#ffffffff"
                     android:layout_marginTop="15dp"
@@ -181,20 +191,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:timePickerMode="spinner"
-                    android:id="@+id/timePicker" >
-                </TimePicker>
+                    android:id="@+id/event_start"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                    />
 
                 <TimePicker
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:timePickerMode="spinner"
-                    android:id="@+id/timePicker2" />
+                    android:id="@+id/event_end"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Location:"
+                    android:text="@string/Location"
                     android:id="@+id/textView11"
                     android:textColor="#ffffff"
                     android:layout_marginTop="15dp"
@@ -203,17 +216,17 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/location_name"
+                    android:id="@+id/event_location"
+                    android:hint="@string/hint_location"
                     android:textColor="#ffffffff"
                     android:textColorHint="#ffffffff"
-                    android:textIsSelectable="true"
                     android:textColorLink="#ffffffff" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Description"
+                    android:text="@string/Description"
                     android:id="@+id/description_text"
                     android:textColor="#ffffffff"
                     android:layout_marginTop="15dp"
@@ -224,19 +237,42 @@
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"
                     android:ems="10"
-                    android:id="@+id/actual_description"
+                    android:id="@+id/event_description"
+                    android:hint="@string/hint_desc"
                     android:textColor="#ffffffff"
                     android:textColorHint="#ffffffff"
                     android:textIsSelectable="true"
                     android:textColorLink="#ffffffff" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/Contact"
+                    android:id="@+id/textView13"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/event_contact"
+                    android:hint="@string/hint_location"
+                    android:textColor="#ffffffff"
+                    android:textColorHint="#ffffffff"
+                    android:textColorLink="#ffffffff" />
+
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Submit"
+                    android:text="@string/Submit"
                     android:id="@+id/submit_button"
-                    android:background="#ffffffff"
-                    android:textColor="#00000000" />
+                    android:textColor="#FFFFFFFF"
+                    android:onClick="submit"
+                    />
+
+
 
             </LinearLayout>
         </ScrollView>
