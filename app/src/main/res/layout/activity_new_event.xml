@@ -241,7 +241,6 @@
                     android:hint="@string/hint_desc"
                     android:textColor="#ffffffff"
                     android:textColorHint="#ffffffff"
-                    android:textIsSelectable="true"
                     android:textColorLink="#ffffffff" />
 
                 <TextView
@@ -258,7 +257,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/event_contact"
-                    android:hint="@string/hint_location"
+                    android:hint="@string/hint_contact"
                     android:textColor="#ffffffff"
                     android:textColorHint="#ffffffff"
                     android:textColorLink="#ffffffff" />
