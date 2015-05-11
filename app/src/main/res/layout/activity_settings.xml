@@ -13,12 +13,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="440dp">
+        android:layout_marginBottom="410dp">
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="UC EVENT"
+            android:text="@string/app_name"
             android:id="@+id/textView4"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center" />
@@ -26,14 +26,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/action_settings"
             android:id="@+id/textView7"
             android:layout_gravity="center" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go back"
+            android:text="@string/Go_back"
             android:id="@+id/textView8"
             android:layout_gravity="left|center_vertical"
             android:clickable="true" />
@@ -56,7 +56,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="@string/email"
             android:id="@+id/textView9"
             android:layout_marginTop="5dp" />
 
@@ -83,7 +83,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:text="@string/prompt_username"
             android:id="@+id/textView10"
             android:layout_marginTop="5dp" />
 
@@ -92,7 +92,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText5"
             android:layout_gravity="left|top"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:inputType="text" />
     </FrameLayout>
 
     <FrameLayout
@@ -108,7 +109,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:text="@string/prompt_password"
             android:id="@+id/textView11"
             android:layout_marginTop="5dp" />
 
@@ -117,7 +118,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText6"
             android:layout_gravity="left|top"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword" />
     </FrameLayout>
 
     <FrameLayout
@@ -133,7 +135,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Confirm Password"
+            android:text="@string/prompt_set_password_again"
             android:id="@+id/textView12"
             android:layout_marginTop="5dp" />
 
@@ -142,7 +144,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText7"
             android:layout_gravity="left|top"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword" />
     </FrameLayout>
     <FrameLayout
         android:layout_width="fill_parent"
@@ -157,8 +160,8 @@
 
         <Button
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Settings"
+            android:layout_height="68dp"
+            android:text="@string/save_settings"
             android:id="@+id/button2"
             android:layout_gravity="left|center_vertical" />
     </FrameLayout>

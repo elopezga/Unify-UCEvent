@@ -79,5 +79,8 @@
     <string name="view_selected_event"><![CDATA[View Selected Events >]]></string>
     <string name="events">Events</string>
     <string name="my_events">My Events</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="save_settings">Save settings</string>
 
 </resources>
