@@ -73,6 +73,8 @@
     <string name="Title_edit">Title:</string>
     <string name="new_event">New Event</string>
     <string name="title_activity_categories">categories</string>
+    <string name="title_activity_events_popular">events_popular</string>
+    <string name="title_activity_home">Home</string>
 
     <string name="view_selected_event"><![CDATA[View Selected Events >]]></string>
     <string name="events">Events</string>

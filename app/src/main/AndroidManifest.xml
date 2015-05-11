@@ -138,6 +138,14 @@
             android:name=".categories"
             android:label="@string/title_activity_categories" >
         </activity>
+        <activity
+            android:name=".events_popular"
+            android:label="@string/title_activity_events_popular" >
+        </activity>
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_home" >
+        </activity>
     </application>
 
 </manifest>
