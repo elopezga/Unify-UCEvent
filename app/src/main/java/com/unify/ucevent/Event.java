@@ -77,6 +77,17 @@ public class Event extends ParseObject{
         put("Description",description);
         put("Category",category);
         put("Author", author);
+        saveInBackground();
 
+    }
+
+    public void fillFromDB( Event retrieved ){
+        title = retrieved.getString("Title");
+        location = retrieved.getString("Location");
+        time = retrieved.getString("Time");
+        numGoing = retrieved.getInt("NumGoing");
+        description = retrieved.getString("Description");
+        category = retrieved.getString("Category");
+        author = retrieved.getParseUser("Author");
     }
 }

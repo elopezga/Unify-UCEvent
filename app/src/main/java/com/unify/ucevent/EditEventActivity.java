@@ -2,17 +2,23 @@ package com.unify.ucevent;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
 
 public class EditEventActivity extends ActionBarActivity {
 
     //Event event = Globals.event;
     Event editEvent = Globals.event;
+    Event someEvent = new Event();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +29,14 @@ public class EditEventActivity extends ActionBarActivity {
            db submit button
          */
 
-        editEvent.setTitle("Tea Party");
-        editEvent.setLocation("Botanic Garden");
-        editEvent.upload();
-        editEvent.saveInBackground();
+        //editEvent.setTitle("Tea Party");
+        //editEvent.setLocation("Botanic Garden");
+        //editEvent.upload();
+        //editEvent.saveInBackground();
 
 
-        EditText titleText = (EditText) findViewById(R.id.editText);
+        final TextView titleText = (TextView) findViewById(R.id.textView4);
+        /*
         titleText.setOnEditorActionListener( new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -37,7 +44,32 @@ public class EditEventActivity extends ActionBarActivity {
                 editEvent.setTitle(v.getText().toString());
                 return true;
             }
+        });*/
+
+        // Template for querying. Probably does not belong in Event class
+        // Idea: Query Events that fall within certain created Time e.g. latest
+        // so that you can retrieve many using query filter
+        // Also, make events have a popularity field for the same reason; only
+        // for internal use
+        ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
+        query.getInBackground("jvcTxECzit", new GetCallback<Event>(){
+            public void done(Event obj, ParseException e){
+                // Note: Takes a while to retrieve data. This function will run when
+                // it is done retrieving data
+                Log.d("Query", obj.getString("Title")); // USE THIS not Event class methods
+
+                //titleText.setText(obj.getString("Title"));
+                someEvent.fillFromDB(obj);
+
+                titleText.setText(someEvent.getTitle());
+
+
+            }
         });
+        //someEvent.setTitle("Fuck you asshole");
+        //titleText.setText(someEvent.getTitle());
+        //Log.d("Status", "DOne");
+        //Log.d("Event", someEvent.getTitle() );
 
     }
 

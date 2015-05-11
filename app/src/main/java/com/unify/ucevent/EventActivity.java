@@ -67,10 +67,11 @@ public class EventActivity extends ActionBarActivity {
     }
 
 
+    /*
     public void setContent( Event event ){
         TextView titleText = (TextView) findViewById(R.id.event_title);
         titleText.setText(event.getTitle());
-    }
+    }*/
 
     public void uploadData( Event event){
         event.upload();
@@ -85,6 +86,7 @@ public class EventActivity extends ActionBarActivity {
      * Push Event to parse database
      * Send back to main page
      */
+    /*
     public void submit( View view ) {
         EditText title = (EditText)findViewById(R.id.event_title);
         String titleText = title.getText().toString();
@@ -107,20 +109,13 @@ public class EventActivity extends ActionBarActivity {
         Event newEvent = new Event( titleText, locationText, timeText, descriptionText, categoryText);
         newEvent.upload();
 
-        /*event.setTime(timeText);
-        event.setCategory(categoryText);
-        event.setDescription(descriptionText);
-        event.setLocation(locationText);
-        event.setTitle(titleText);
-        event.setNumGoing(0);
-
-        uploadData(event);*/
 
         // Make sure to always call saveInBackground after uploading event object!!
         newEvent.saveInBackground();
 
         Intent intent = new Intent( this, MainActivity.class );
         startActivity(intent);
-    }
+    }*/
+
 
 }
