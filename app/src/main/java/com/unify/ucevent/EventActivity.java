@@ -1,13 +1,18 @@
 package com.unify.ucevent;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 /* ACTIVITY TO MAKE NEW EVENT */
 
@@ -67,10 +72,11 @@ public class EventActivity extends ActionBarActivity {
     }
 
 
+    /*
     public void setContent( Event event ){
         TextView titleText = (TextView) findViewById(R.id.event_title);
         titleText.setText(event.getTitle());
-    }
+    }*/
 
     public void uploadData( Event event){
         event.upload();
@@ -86,41 +92,76 @@ public class EventActivity extends ActionBarActivity {
      * Send back to main page
      */
     public void submit( View view ) {
+
         EditText title = (EditText)findViewById(R.id.event_title);
-        String titleText = title.getText().toString();
-
         EditText description = (EditText)findViewById(R.id.event_description);
-        String descriptionText = description.getText().toString();
-
-        EditText time = (EditText)findViewById(R.id.event_time);
-        String timeText = time.getText().toString();
-
         EditText location = (EditText)findViewById(R.id.event_location);
-        String locationText = location.getText().toString();
+        EditText contact = (EditText)findViewById(R.id.event_contact);
+        DatePicker date = (DatePicker)findViewById(R.id.event_date);
+        TimePicker start = (TimePicker)findViewById(R.id.event_start);
+        TimePicker end = (TimePicker)findViewById(R.id.event_end);
+        Spinner category = (Spinner)findViewById(R.id.event_category);
 
-        EditText category = (EditText)findViewById(R.id.event_category);
-        String categoryText = category.getText().toString();
+        RetrieveEventInput input = new RetrieveEventInput(title, description, location, contact, date, start, end, category);
 
-        // Check if title, time, and location are empty
-        // If so, print error message and quit
+        // Check valid fields
+        CheckEventInput check = new CheckEventInput(title, location, contact, date, start, end);
+        Context context = getApplicationContext();
+        CharSequence text;
+        boolean error = false;
+        int duration = Toast.LENGTH_SHORT;
 
-        Event newEvent = new Event( titleText, locationText, timeText, descriptionText, categoryText);
-        newEvent.upload();
+        if( !check.confirmTitle() ) {
+            if( title.getText().toString().matches("") ) {
+                text = "Please Specify Event Title";
+            }
+            else {
+                text = "Event Title Already Exists - Please Rename";
+            }
+            error = true;
+        }
+        else if( !check.confirmDate() ) {
+            text = "Invalid Date Specified";
+            error = true;
+        }
+        else if( !check.confirmStartTime() ) {
+            text = "Invalid Start Time Specified";
+            error = true;
+        }
+        else if( !check.confirmEndTime() ) {
+            text = "Event End Time cannot preceed Event Start Time";
+            error = true;
+        }
+        else if( !check.confirmLocation() ) {
+            text = "Please Specify Event Location";
+            error = true;
+        }
+        else if( !check.confirmContact() ) {
+            text = "Invalid Contact - If you are logged in with facebook, you MUST specify a contact email, else, invalid specified email";
+            error = true;
+        }
+        else {
+            text = "Success! Event Created";
+        }
 
-        /*event.setTime(timeText);
-        event.setCategory(categoryText);
-        event.setDescription(descriptionText);
-        event.setLocation(locationText);
-        event.setTitle(titleText);
-        event.setNumGoing(0);
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
 
-        uploadData(event);*/
+        if( !error ) { // Only Create event if no invalid inputs
+            Event newEvent = new Event(input.getTitle(), input.getLocation(), input.getDescription(),
+                    input.getCategory(), input.getContact());
+            newEvent.setDate(input.getEventMonth(), input.getEventDay(), input.getEventYear());
+            newEvent.setTimes(input.getEventStartHour(), input.getEventStartMinute(),
+                    input.getEventEndHour(), input.getEventEndMinute());
+            newEvent.upload();
 
-        // Make sure to always call saveInBackground after uploading event object!!
-        newEvent.saveInBackground();
 
-        Intent intent = new Intent( this, MainActivity.class );
-        startActivity(intent);
+            // Make sure to always call saveInBackground after uploading event object!!
+            newEvent.saveInBackground();
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
 }
