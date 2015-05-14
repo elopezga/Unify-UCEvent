@@ -1,5 +1,6 @@
 package com.unify.ucevent;
 
+import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,14 +9,19 @@ import android.view.View;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 import com.parse.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //added a comment
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ListActivity {
 
     /*
     public void onCreate() {
@@ -32,6 +38,8 @@ public class MainActivity extends ActionBarActivity {
         testObject.saveInBackground();
 
     }*/
+
+    private List<String> listvalues;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +47,15 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_main);
 
+        listvalues = new ArrayList<String>();
+        listvalues.add("Android");
+        listvalues.add("iOS");
+        listvalues.add("Blackberry");
+        listvalues.add("Windows Phone");
 
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
+                R.id.listtext, listvalues);
+        setListAdapter(myAdapter);
         
         /*
         ParseObject testObject = new ParseObject("TestObject");
@@ -49,14 +65,23 @@ public class MainActivity extends ActionBarActivity {
         */
     }
 
+    @Override
+    protected void onListItemClick(ListView list, View view, int position, long id){
+        super.onListItemClick(list, view, position, id);
 
+        //Do what you want
+    }
+
+
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
+    }*/
 
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -70,7 +95,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     public void openEvent(View view){
         Intent intent = new Intent(this, EventActivity.class);
