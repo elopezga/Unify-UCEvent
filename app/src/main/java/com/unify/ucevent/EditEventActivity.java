@@ -13,6 +13,8 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
+import com.unify.ucevent.R;
+
 
 public class EditEventActivity extends ActionBarActivity {
 
