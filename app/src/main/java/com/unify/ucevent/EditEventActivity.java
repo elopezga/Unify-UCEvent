@@ -19,7 +19,7 @@ import com.unify.ucevent.R;
 public class EditEventActivity extends ActionBarActivity {
 
     //Event event = Globals.event;
-    Event editEvent = Globals.event;
+    //Event editEvent = Globals.event;
     Event someEvent = new Event();
 
     @Override
@@ -66,7 +66,7 @@ public class EditEventActivity extends ActionBarActivity {
                 titleText.setText(someEvent.getTitle());
 
 
-            }
+        }
         });
         //someEvent.setTitle("Fuck you asshole");
         //titleText.setText(someEvent.getTitle());

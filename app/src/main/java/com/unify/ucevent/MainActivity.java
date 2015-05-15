@@ -3,6 +3,7 @@ package com.unify.ucevent;
 import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.app.Activity;
 import android.content.Intent;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 
@@ -17,6 +19,7 @@ import com.parse.*;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 //added a comment
 
@@ -39,7 +42,8 @@ public class MainActivity extends ListActivity {
 
     }*/
 
-    private List<String> listvalues;
+    private List<String> listvalues = new ArrayList<String>();
+    private MainActivity THIS = this;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,18 @@ public class MainActivity extends ListActivity {
 
         setContentView(R.layout.activity_main);
 
+
+        getEvents();
+
+
+        final Button button = (Button) findViewById(R.id.new_event);
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                updateListView(THIS);
+            }
+        });
+
+        /*
         listvalues = new ArrayList<String>();
         listvalues.add("Android");
         listvalues.add("iOS");
@@ -55,7 +71,7 @@ public class MainActivity extends ListActivity {
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
                 R.id.listtext, listvalues);
-        setListAdapter(myAdapter);
+        setListAdapter(myAdapter);*/
         
         /*
         ParseObject testObject = new ParseObject("TestObject");
@@ -113,6 +129,54 @@ public class MainActivity extends ListActivity {
     public void newEvent( View view ) {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
+    }
+
+    public void getEvents(){
+
+        ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
+        query.whereGreaterThanOrEqualTo("NumGoing", 0);
+        query.findInBackground( new FindCallback<Event>(){
+            public void done(List<Event> events, ParseException e){
+                // Note: Takes a while to retrieve data. This function will run when
+                // it is done retrieving data
+
+                if( e != null ){
+                    Log.d("Query Error", "Something went wrong with PARSE");
+                }
+
+                for( Event ev : events ){
+                    // See if this works; otherwise create new Event each time and call fillFromDB
+                    // then add
+
+                    Globals.EventList.add(ev);
+                    //Log.d("Object Found: ", ev.getString("Title"));
+                }
+
+                for( Event ev : Globals.EventList ){
+                    listvalues.add(ev.getString("Title"));
+                }
+
+
+                /*
+                Log.d("Query", obj.getString("Title")); // USE THIS not Event class methods
+
+                //titleText.setText(obj.getString("Title"));
+                someEvent.fillFromDB(obj);
+
+                titleText.setText(someEvent.getTitle());*/
+
+
+
+            }
+        });
+
+    }
+
+
+    public void updateListView( MainActivity th ){
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(th, R.layout.event_list_row,
+                R.id.listtext, listvalues);
+        setListAdapter(myAdapter);
     }
 
 }

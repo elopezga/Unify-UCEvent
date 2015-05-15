@@ -44,7 +44,8 @@ public class Event extends ParseObject{
         description = "Just do you, man";
         category = "You";
         author = ParseUser.getCurrentUser();
-        contact = ParseUser.getCurrentUser().getEmail();
+        contact = "Test@email.com"; // Use bottom code for deployment!!!
+        //contact = ParseUser.getCurrentUser().getEmail();
         //ACL = new ParseACL();
         //ACL.setWriteAccess(ParseUser.getCurrentUser(),true);
         //setACL(ACL);
