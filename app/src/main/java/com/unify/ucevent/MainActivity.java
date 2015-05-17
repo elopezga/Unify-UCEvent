@@ -186,4 +186,9 @@ public class MainActivity extends ListActivity {
         setListAdapter(myAdapter);
     }
 
+    public void goTosettings(View view){
+        Intent intent = new Intent(this, settings.class);
+        startActivity(intent);
+    }
+
 }
