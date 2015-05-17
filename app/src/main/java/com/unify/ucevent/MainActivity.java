@@ -135,18 +135,18 @@ public class MainActivity extends ListActivity {
 
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
-        query.findInBackground( new FindCallback<Event>(){
-            public void done(List<Event> events, ParseException e){
+        query.findInBackground(new FindCallback<Event>() {
+            public void done(List<Event> events, ParseException e) {
                 // Note: Takes a while to retrieve data. This function will run when
                 // it is done retrieving data
 
-                if( e != null ){
+                if (e != null) {
                     Log.d("Query Error", "Something went wrong with PARSE");
                 }
 
                 Globals.EventList.clear();
 
-                for( Event ev : events ){
+                for (Event ev : events) {
                     // See if this works; otherwise create new Event each time and call fillFromDB
                     // then add
 
@@ -154,7 +154,7 @@ public class MainActivity extends ListActivity {
                     //Log.d("Object Found: ", ev.getString("Title"));
                 }
 
-                for( Event ev : Globals.EventList ){
+                for (Event ev : Globals.EventList) {
                     listvalues.add(ev.getString("Title"));
                 }
 
@@ -168,7 +168,6 @@ public class MainActivity extends ListActivity {
                 titleText.setText(someEvent.getTitle());*/
 
 
-
             }
         });
 
@@ -177,6 +176,12 @@ public class MainActivity extends ListActivity {
 
     public void updateListView( MainActivity th ){
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(th, R.layout.event_list_row,
+                R.id.name_of_event, listvalues);
+        setListAdapter(myAdapter);
+    }
+
+    public void updateListView(View view){
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
                 R.id.name_of_event, listvalues);
         setListAdapter(myAdapter);
     }
