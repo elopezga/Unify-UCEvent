@@ -52,7 +52,7 @@ public class MainActivity extends ListActivity {
         setContentView(R.layout.activity_main);
 
 
-        getEvents();
+        //getEvents();
 
 
         /*final Button button = (Button) findViewById(R.id.new_event);
@@ -145,6 +145,7 @@ public class MainActivity extends ListActivity {
                 }
 
                 Globals.EventList.clear();
+                listvalues.clear();
 
                 for (Event ev : events) {
                     // See if this works; otherwise create new Event each time and call fillFromDB
@@ -181,6 +182,7 @@ public class MainActivity extends ListActivity {
     }
 
     public void updateListView(View view){
+        getEvents();
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
                 R.id.name_of_event, listvalues);
         setListAdapter(myAdapter);
