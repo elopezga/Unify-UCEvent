@@ -46,7 +46,8 @@
             android:layout_height="wrap_content"
             android:background="#00ffffff"
             android:text="+"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:onClick="goToNewEvent"/>
 
     </LinearLayout>
 

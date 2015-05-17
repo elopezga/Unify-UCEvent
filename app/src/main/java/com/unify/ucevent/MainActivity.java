@@ -55,12 +55,12 @@ public class MainActivity extends ListActivity {
         getEvents();
 
 
-        final Button button = (Button) findViewById(R.id.new_event);
+        /*final Button button = (Button) findViewById(R.id.new_event);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 updateListView(THIS);
             }
-        });
+        });*/
 
         /*
         listvalues = new ArrayList<String>();
@@ -191,4 +191,8 @@ public class MainActivity extends ListActivity {
         startActivity(intent);
     }
 
+    public void goToNewEvent(View view){
+        Intent intent = new Intent(this, EventActivity.class);
+        startActivity(intent);
+    }
 }
