@@ -177,7 +177,7 @@ public class MainActivity extends ListActivity {
 
     public void updateListView( MainActivity th ){
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(th, R.layout.event_list_row,
-                R.id.listtext, listvalues);
+                R.id.name_of_event, listvalues);
         setListAdapter(myAdapter);
     }
 
