@@ -144,6 +144,8 @@ public class MainActivity extends ListActivity {
                     Log.d("Query Error", "Something went wrong with PARSE");
                 }
 
+                Globals.EventList.clear();
+
                 for( Event ev : events ){
                     // See if this works; otherwise create new Event each time and call fillFromDB
                     // then add
