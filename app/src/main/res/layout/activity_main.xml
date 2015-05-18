@@ -53,33 +53,6 @@
 
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout3"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:weightSum="1">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.49"
-            android:text="Popular" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.49"
-            android:text="Upcoming" />
-    </LinearLayout>
-
-
-    <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,9 +85,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/linearLayout"
         android:layout_alignStart="@+id/linearLayout"
-        android:layout_below="@+id/linearLayout2"
         android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout3">
 
         <ListView
             android:id="@android:id/list"
