@@ -5,4 +5,4 @@
     android:layout_height="wrap_content"
     android:src="@drawable/uc_event_logo"
     android:contentDescription="@string/com_parse_ui_logo_content_description" />
-<!-- From: file:/Z:/Projects/Unify-UCEvent/ParseLoginUI/res/layout/com_parse_ui_parse_login_app_logo.xml --><!-- From: file:/Z:/Projects/Unify-UCEvent/ParseLoginUI/build/intermediates/bundles/debug/res/layout/com_parse_ui_parse_login_app_logo.xml -->
+<!-- From: file:/Users/nmcdonald/Desktop/Unify-UCEvent/ParseLoginUI/res/layout/com_parse_ui_parse_login_app_logo.xml --><!-- From: file:/Users/nmcdonald/Desktop/Unify-UCEvent/ParseLoginUI/build/intermediates/bundles/debug/res/layout/com_parse_ui_parse_login_app_logo.xml -->
