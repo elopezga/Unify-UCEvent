@@ -87,7 +87,7 @@
     <string name="hint_title">Enter Event Title...</string>
     <string name="hint_desc">Enter Event Description(optional)...</string>
     <string name="hint_contact">Only specify if logged in with Facebook</string>
-    
+
     <string-array name="category_list">
         <item>Greek Life</item>
         <item>Free Food</item>
@@ -108,6 +108,6 @@
     <string name="my_events">My Events</string>
     <string name="email">Email</string>
     <string name="username">Username</string>
-    <string name="save_settings">Save settings</string>
+    <string name="save_settings">Save Settings and Go Back</string>
 
 </resources>
