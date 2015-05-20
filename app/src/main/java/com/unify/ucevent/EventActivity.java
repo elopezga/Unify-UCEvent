@@ -1,5 +1,6 @@
 package com.unify.ucevent;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 /* ACTIVITY TO MAKE NEW EVENT */
 
-public class EventActivity extends ActionBarActivity {
+public class EventActivity extends Activity /*ActionBarActivity*/ {
 
     //Event event = Globals.event;
 
