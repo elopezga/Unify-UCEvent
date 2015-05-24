@@ -1,9 +1,6 @@
 package com.unify.ucevent;
 
 import android.test.InstrumentationTestCase;
-import android.widget.EditText;
-import android.widget.DatePicker;
-import android.widget.TimePicker;
 
 import org.junit.Before;
 import org.junit.Test;
