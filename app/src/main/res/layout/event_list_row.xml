@@ -59,10 +59,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Join or Going"
+        android:text="Join"
         android:id="@+id/join_or_going"
         android:layout_gravity="right"
-        android:layout_alignBottom="@+id/location_of_event"
+        android:layout_alignBottom="@+id/time_of_event"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -72,7 +72,7 @@
         android:text="View Event"
         android:id="@+id/view_event_button"
         android:layout_gravity="center_horizontal"
-        android:layout_toLeftOf="@+id/join_or_going"
+        android:layout_centerHorizontal="true"
         android:onClick="viewEvent"
-        android:layout_below="@+id/join_or_going" />
+        android:layout_below="@+id/location_of_event" />
 </RelativeLayout>
