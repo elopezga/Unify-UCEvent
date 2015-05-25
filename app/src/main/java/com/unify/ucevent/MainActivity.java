@@ -52,9 +52,9 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
+        updateMyListView(getCurrentFocus());
+        updateListView(getCurrentFocus());
 
         //getEvents();
 
@@ -121,19 +121,7 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
     }
-
-    public void changeEventList(View view){
-        // Change to event list xml/activity
-    }
-
-    public void changeMyEventList(View view) {
-        // Change to my event list xml/activity
-    }
-
-    public void newEvent( View view ) {
-        Intent intent = new Intent(this, EventActivity.class);
-        startActivity(intent);
-    }
+    
 
     public void getEvents(){
 
@@ -149,6 +137,7 @@ public class MainActivity extends ListActivity {
                 }
 
                 Globals.EventList.clear();
+                allEvents.clear();
                 listvalues.clear();
 
                 for (Event ev : events) {
@@ -194,6 +183,7 @@ public class MainActivity extends ListActivity {
 
                     Globals.MyEventList.clear();
                     myEventListValues.clear();
+                    myEvents.clear();
 
                     for (Event ev : events) {
                         // See if this works; otherwise create new Event each time and call fillFromDB

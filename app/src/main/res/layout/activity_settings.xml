@@ -27,7 +27,7 @@
             android:background="#00000000"
             android:contentDescription="@string/setting_ic"
             android:src="@drawable/ic_action_settings"
-            android:onClick="goTosettings"/>
+            />
 
         <ImageView
             android:id="@+id/imageView"
