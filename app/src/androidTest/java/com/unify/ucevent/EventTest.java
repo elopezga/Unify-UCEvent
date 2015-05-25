@@ -33,6 +33,7 @@ public class EventTest extends InstrumentationTestCase {
 
     Event event;
 
+    @Before
     public void setUp() {
         title = "Customer meeting";
         location = "UCSD, Center 205";
