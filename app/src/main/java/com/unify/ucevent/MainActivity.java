@@ -134,8 +134,10 @@ public class MainActivity extends ListActivity {
         startActivity(intent);
     }
 
+    // Get all events within the criteria
     public void getEvents(){
 
+        /*
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
         query.findInBackground(new FindCallback<Event>() {
@@ -170,25 +172,28 @@ public class MainActivity extends ListActivity {
                 //titleText.setText(obj.getString("Title"));
                 someEvent.fillFromDB(obj);
 
-                titleText.setText(someEvent.getTitle());*/
+                titleText.setText(someEvent.getTitle());
 
 
             }
-        });
+        });*/
 
+        // Cleaner version of querying!
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
 
         try {
-            Globals.MyEventList = (ArrayList)query.find();
+            Globals.EventList = (ArrayList)query.find();
         }catch( ParseException e ){
             // Exception handle
         }
 
     }
 
+    // Get user's posted events
     public void getMyEvents(){
 
+        /*
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         //query.whereGreaterThanOrEqualTo("NumGoing", 0);
         query.whereEqualTo("Author", ParseUser.getCurrentUser());
@@ -221,7 +226,18 @@ public class MainActivity extends ListActivity {
 
 
             }
-        });
+        });*/
+
+        // Cleaner version of querying!
+        ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
+        query.whereGreaterThanOrEqualTo("NumGoing", 0);
+        query.whereEqualTo("Author", ParseUser.getCurrentUser());
+
+        try {
+            Globals.MyEventList = (ArrayList)query.find();
+        }catch( ParseException e ){
+            // Exception handle
+        }
 
     }
 
@@ -240,7 +256,7 @@ public class MainActivity extends ListActivity {
         ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row, allEvents);
         setListAdapter(myAdapter);*/
 
-        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row,Globals.MyEventList);
+        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row,Globals.EventList);
         setListAdapter(myAdapter);
         
     }
@@ -249,7 +265,7 @@ public class MainActivity extends ListActivity {
         getMyEvents();
         /*ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
                 R.id.name_of_event, myEventListValues);*/
-        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row, myEvents);
+        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row, Globals.MyEventList);
         setListAdapter(myAdapter);
     }
 
