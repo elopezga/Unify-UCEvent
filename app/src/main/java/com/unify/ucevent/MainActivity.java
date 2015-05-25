@@ -44,6 +44,8 @@ public class MainActivity extends ListActivity {
 
     private List<String> listvalues = new ArrayList<String>();
     private List<String> myEventListValues = new ArrayList<String>();
+    private ArrayList<Event> myEvents = new ArrayList<Event>();
+    private ArrayList<Event> allEvents = new ArrayList<Event>();
     private MainActivity THIS = this;
     
     @Override
@@ -153,6 +155,7 @@ public class MainActivity extends ListActivity {
                     // then add
 
                     Globals.EventList.add(ev);
+                    allEvents.add(ev);
                     //Log.d("Object Found: ", ev.getString("Title"));
                 }
 
@@ -187,8 +190,7 @@ public class MainActivity extends ListActivity {
 
                 if (e != null) {
                     Log.d("Query Error", "Something went wrong with PARSE");
-                }
-                else {
+                } else {
 
                     Globals.MyEventList.clear();
                     myEventListValues.clear();
@@ -198,6 +200,7 @@ public class MainActivity extends ListActivity {
                         // then add
 
                         Globals.MyEventList.add(ev);
+                        myEvents.add(ev);
                         //Log.d("Object Found: ", ev.getString("Title"));
                     }
 
@@ -222,15 +225,17 @@ public class MainActivity extends ListActivity {
 
     public void updateListView(View view){
         getEvents();
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
-                R.id.name_of_event, listvalues);
+        /*ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
+                R.id.name_of_event, listvalues);*/
+        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row, allEvents);
         setListAdapter(myAdapter);
     }
 
     public void updateMyListView(View view) {
         getMyEvents();
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
-                R.id.name_of_event, myEventListValues);
+        /*ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
+                R.id.name_of_event, myEventListValues);*/
+        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row, myEvents);
         setListAdapter(myAdapter);
     }
 
