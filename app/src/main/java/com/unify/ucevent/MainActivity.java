@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 import com.parse.*;
@@ -41,7 +42,7 @@ public class MainActivity extends ListActivity {
         testObject.saveInBackground();
 
     }*/
-
+    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
     private List<String> listvalues = new ArrayList<String>();
     private List<String> myEventListValues = new ArrayList<String>();
     private ArrayList<Event> myEvents = new ArrayList<Event>();
@@ -250,6 +251,9 @@ public class MainActivity extends ListActivity {
 
     public void viewEvent(View view) {
         Intent intent = new Intent(this, Event_Detail.class);
+        TextView text = (TextView) findViewById(R.id.name_of_event);
+        String message = text.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE,message);
         startActivity(intent);
     }
 }
