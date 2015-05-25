@@ -85,5 +85,6 @@
         android:layout_below="@+id/description_of_event"
         android:layout_toLeftOf="@+id/join_or_going"
         android:layout_toRightOf="@+id/description_of_event"
-        android:layout_toEndOf="@+id/description_of_event" />
+        android:layout_toEndOf="@+id/description_of_event"
+        android:onClick="viewEvent"/>
 </RelativeLayout>
