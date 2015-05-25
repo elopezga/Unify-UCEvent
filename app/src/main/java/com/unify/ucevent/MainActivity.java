@@ -177,7 +177,7 @@ public class MainActivity extends ListActivity {
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
 
         try {
-            Globals.EventList = query.find();
+            Globals.MyEventList = (ArrayList)query.find();
         }catch( ParseException e ){
             // Exception handle
         }
@@ -198,8 +198,9 @@ public class MainActivity extends ListActivity {
             listvalues.add(ev.getString("Title"));
         }
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
-                R.id.name_of_event, listvalues);
+        //ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
+                //R.id.name_of_event, listvalues);
+        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row,Globals.MyEventList);
         setListAdapter(myAdapter);
     }
 
