@@ -1,6 +1,9 @@
 package com.unify.ucevent;
 
 import android.test.InstrumentationTestCase;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TimePicker;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,12 +13,26 @@ import org.junit.Test;
  */
 public class CheckEventInputTest extends InstrumentationTestCase {
 
+    EditText title;
+    EditText location;
+    EditText contact;
+    DatePicker date;
+    TimePicker start;
+    TimePicker end;
+
     CheckEventInput checkEventInput;
 
     @Before
-    public void setup() {
-        checkEventInput = new CheckEventInput(null, null, null, null, null,
-                                              null); //Empty input
+    public void setUp() {
+        /*
+        title = new EditText();
+        location = new EditText();
+        contact = new EditText();
+        date = new DatePicker();
+        start = new TimePicker();
+        end = new TimePicker();
+        */
+        checkEventInput = new CheckEventInput(title, location, contact, date, start, end);
     }
 
     @Test
