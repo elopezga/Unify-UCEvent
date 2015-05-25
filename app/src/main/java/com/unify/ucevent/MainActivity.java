@@ -47,7 +47,7 @@ public class MainActivity extends ListActivity {
     private ArrayList<Event> myEvents = new ArrayList<Event>();
     private ArrayList<Event> allEvents = new ArrayList<Event>();
     private MainActivity THIS = this;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -175,7 +175,6 @@ public class MainActivity extends ListActivity {
 
             }
         });
-
     }
 
     public void getMyEvents(){

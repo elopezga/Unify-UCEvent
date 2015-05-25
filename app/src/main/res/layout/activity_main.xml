@@ -61,7 +61,8 @@
         android:layout_below="@+id/linearLayout"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:background="#ff2397f3">
 
         <Button
             android:id="@+id/button5"
