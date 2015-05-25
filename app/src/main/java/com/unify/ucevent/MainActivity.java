@@ -132,7 +132,7 @@ public class MainActivity extends ListActivity {
     }
 
     public void getEvents(){
-
+        /*
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
         query.findInBackground(new FindCallback<Event>() {
@@ -166,15 +166,25 @@ public class MainActivity extends ListActivity {
                 //titleText.setText(obj.getString("Title"));
                 someEvent.fillFromDB(obj);
 
-                titleText.setText(someEvent.getTitle());*/
+                titleText.setText(someEvent.getTitle());
 
 
             }
         });
+        */
+
+        ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
+        query.whereGreaterThanOrEqualTo("NumGoing", 0);
+
+        try {
+            Globals.EventList = query.find();
+        }catch( ParseException e ){
+            // Exception handle
+        }
 
     }
 
-
+    @Deprecated
     public void updateListView( MainActivity th ){
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(th, R.layout.event_list_row,
                 R.id.name_of_event, listvalues);
@@ -183,6 +193,11 @@ public class MainActivity extends ListActivity {
 
     public void updateListView(View view){
         getEvents();
+
+        for (Event ev : Globals.EventList) {
+            listvalues.add(ev.getString("Title"));
+        }
+
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
                 R.id.name_of_event, listvalues);
         setListAdapter(myAdapter);
@@ -197,4 +212,19 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
     }
+
+    /*
+    public void goToViewEvent(View view){
+        //final Button button = (Button) findViewById(R.id.);
+        final Button button = (Button) findViewById(view.getId());
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                updateListView(THIS);
+            }
+        });
+
+        Globals.EventList.
+    }*/
+
+
 }
