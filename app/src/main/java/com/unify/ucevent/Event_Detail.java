@@ -1,9 +1,11 @@
 package com.unify.ucevent;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class Event_Detail extends ActionBarActivity {
@@ -11,7 +13,14 @@ public class Event_Detail extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_detail);
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        // This currently pulls the title of the event but I don't know how to pull the id
+        // Worst case, we can just requery the title, but that might end up with multiple events.
+        TextView textView = new TextView(this);
+        textView.setText(message);
+        setContentView(textView);
+        //setContentView(R.layout.activity_event_detail);
     }
 
 

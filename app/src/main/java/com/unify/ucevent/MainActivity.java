@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 import com.parse.*;
@@ -41,7 +42,7 @@ public class MainActivity extends ListActivity {
         testObject.saveInBackground();
 
     }*/
-
+    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
     private List<String> listvalues = new ArrayList<String>();
     private List<String> myEventListValues = new ArrayList<String>();
     private ArrayList<Event> myEvents = new ArrayList<Event>();
@@ -51,9 +52,9 @@ public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-
+        updateMyListView(getCurrentFocus());
+        updateListView(getCurrentFocus());
 
         //getEvents();
 
@@ -120,19 +121,7 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
     }
-
-    public void changeEventList(View view){
-        // Change to event list xml/activity
-    }
-
-    public void changeMyEventList(View view) {
-        // Change to my event list xml/activity
-    }
-
-    public void newEvent( View view ) {
-        Intent intent = new Intent(this, EventActivity.class);
-        startActivity(intent);
-    }
+    
 
     // Get all events within the criteria
     public void getEvents(){
@@ -150,6 +139,7 @@ public class MainActivity extends ListActivity {
                 }
 
                 Globals.EventList.clear();
+                allEvents.clear();
                 listvalues.clear();
 
                 for (Event ev : events) {
@@ -208,6 +198,7 @@ public class MainActivity extends ListActivity {
 
                     Globals.MyEventList.clear();
                     myEventListValues.clear();
+                    myEvents.clear();
 
                     for (Event ev : events) {
                         // See if this works; otherwise create new Event each time and call fillFromDB
@@ -281,6 +272,9 @@ public class MainActivity extends ListActivity {
 
     public void viewEvent(View view) {
         Intent intent = new Intent(this, Event_Detail.class);
+        TextView text = (TextView) findViewById(R.id.name_of_event);
+        String message = text.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE,message);
         startActivity(intent);
     }
 }
