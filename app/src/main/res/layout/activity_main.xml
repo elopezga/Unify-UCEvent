@@ -76,7 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="0.50"
-            android:text="My Events" />
+            android:text="My Events"
+            android:onClick="updateMyListView"/>
+
     </LinearLayout>
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/edgar/StudioProjects/Unify-UCEvent/ParseLoginUI/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/res/values-ru/values.xml -->
+    <!-- From: file:/Users/nmcdonald/Desktop/Unify-UCEvent/ParseLoginUI/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.0.1/res/values-ru/values.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Отпр</string>
 </resources>
