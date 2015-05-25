@@ -248,4 +248,9 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
     }
+
+    public void viewEvent(View view) {
+        Intent intent = new Intent(this, Event_Detail.class);
+        startActivity(intent);
+    }
 }
