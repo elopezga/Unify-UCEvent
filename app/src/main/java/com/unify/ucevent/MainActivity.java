@@ -43,6 +43,9 @@ public class MainActivity extends ListActivity {
     }*/
 
     private List<String> listvalues = new ArrayList<String>();
+    private List<String> myEventListValues = new ArrayList<String>();
+    private ArrayList<Event> myEvents = new ArrayList<Event>();
+    private ArrayList<Event> allEvents = new ArrayList<Event>();
     private MainActivity THIS = this;
     
     @Override
@@ -132,7 +135,7 @@ public class MainActivity extends ListActivity {
     }
 
     public void getEvents(){
-        /*
+
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
         query.findInBackground(new FindCallback<Event>() {
@@ -152,6 +155,7 @@ public class MainActivity extends ListActivity {
                     // then add
 
                     Globals.EventList.add(ev);
+                    allEvents.add(ev);
                     //Log.d("Object Found: ", ev.getString("Title"));
                 }
 
@@ -166,12 +170,11 @@ public class MainActivity extends ListActivity {
                 //titleText.setText(obj.getString("Title"));
                 someEvent.fillFromDB(obj);
 
-                titleText.setText(someEvent.getTitle());
+                titleText.setText(someEvent.getTitle());*/
 
 
             }
         });
-        */
 
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
@@ -184,23 +187,69 @@ public class MainActivity extends ListActivity {
 
     }
 
-    @Deprecated
-    public void updateListView( MainActivity th ){
+    public void getMyEvents(){
+
+        ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
+        //query.whereGreaterThanOrEqualTo("NumGoing", 0);
+        query.whereEqualTo("Author", ParseUser.getCurrentUser());
+        query.findInBackground(new FindCallback<Event>() {
+            public void done(List<Event> events, ParseException e) {
+                // Note: Takes a while to retrieve data. This function will run when
+                // it is done retrieving data
+
+                if (e != null) {
+                    Log.d("Query Error", "Something went wrong with PARSE");
+                } else {
+
+                    Globals.MyEventList.clear();
+                    myEventListValues.clear();
+
+                    for (Event ev : events) {
+                        // See if this works; otherwise create new Event each time and call fillFromDB
+                        // then add
+
+                        Globals.MyEventList.add(ev);
+                        myEvents.add(ev);
+                        //Log.d("Object Found: ", ev.getString("Title"));
+                    }
+
+                    for (Event ev : Globals.MyEventList) {
+                        myEventListValues.add(ev.getString("Title"));
+                    }
+
+                }
+
+
+            }
+        });
+
+    }
+
+
+    /*public void updateListView( MainActivity th ){
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(th, R.layout.event_list_row,
                 R.id.name_of_event, listvalues);
         setListAdapter(myAdapter);
-    }
+    }*/
 
     public void updateListView(View view){
         getEvents();
+        /*ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
+                R.id.name_of_event, listvalues);*/
+        /*
+        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row, allEvents);
+        setListAdapter(myAdapter);*/
 
-        for (Event ev : Globals.EventList) {
-            listvalues.add(ev.getString("Title"));
-        }
-
-        //ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
-                //R.id.name_of_event, listvalues);
         ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row,Globals.MyEventList);
+        setListAdapter(myAdapter);
+        
+    }
+
+    public void updateMyListView(View view) {
+        getMyEvents();
+        /*ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
+                R.id.name_of_event, myEventListValues);*/
+        ArrayAdapter myAdapter = new EventAdapter(this, R.layout.event_list_row, myEvents);
         setListAdapter(myAdapter);
     }
 
@@ -214,18 +263,8 @@ public class MainActivity extends ListActivity {
         startActivity(intent);
     }
 
-    /*
-    public void goToViewEvent(View view){
-        //final Button button = (Button) findViewById(R.id.);
-        final Button button = (Button) findViewById(view.getId());
-        button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                updateListView(THIS);
-            }
-        });
-
-        Globals.EventList.
-    }*/
-
-
+    public void viewEvent(View view) {
+        Intent intent = new Intent(this, Event_Detail.class);
+        startActivity(intent);
+    }
 }

@@ -61,7 +61,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
             TextView date = (TextView) v.findViewById(R.id.date_of_event);
             TextView time = (TextView) v.findViewById(R.id.time_of_event);
             TextView location = (TextView) v.findViewById(R.id.location_of_event);
-            TextView description = (TextView) v.findViewById(R.id.description_of_event);
+            //TextView description = (TextView) v.findViewById(R.id.description_of_event);
 
 
             // Assign text to each textview
@@ -72,7 +72,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
             String eTime = e.getInt("StartHour") + ":" + e.getInt("StartMinute") + " to " + e.getInt("EndHour") + ":" + e.getInt("EndMinute");
             time.setText(eTime);
             location.setText(e.getString("Location"));
-            description.setText(e.getString("Description"));
+            //description.setText(e.getString("Description"));
         }
 
         // the view must be returned to our activity
