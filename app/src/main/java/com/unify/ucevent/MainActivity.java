@@ -171,6 +171,7 @@ public class MainActivity extends ListActivity {
         // Cleaner version of querying!
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
+        query.orderByDescending("NumGoing");
 
         try {
             Globals.EventList = (ArrayList)query.find();
