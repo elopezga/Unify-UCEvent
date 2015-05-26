@@ -75,4 +75,11 @@
         android:layout_toLeftOf="@+id/join_or_going"
         android:onClick="viewEvent"
         android:layout_below="@+id/join_or_going" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_pos_in_list"
+        android:text=""
+        android:visibility="invisible"/>
 </RelativeLayout>

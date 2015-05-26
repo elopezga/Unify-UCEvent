@@ -17,8 +17,10 @@ public class Event_Detail extends ActionBarActivity {
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         // This currently pulls the title of the event but I don't know how to pull the id
         // Worst case, we can just requery the title, but that might end up with multiple events.
+        int pos = Integer.parseInt(message);
         TextView textView = new TextView(this);
-        textView.setText(message);
+        //textView.setText( Globals.EventList.get(pos).getTitle());
+        textView.setText( Globals.EventList.get(pos).getString("Title"));
         setContentView(textView);
         //setContentView(R.layout.activity_event_detail);
     }
