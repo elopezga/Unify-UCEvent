@@ -153,6 +153,7 @@
             android:layout_marginTop="20dp"
             android:inputType="textPassword" />
     </FrameLayout>
+
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
