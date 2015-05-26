@@ -103,8 +103,6 @@
 
         </LinearLayout>
 
-
-
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -185,10 +183,10 @@
                 </TimePicker>
 
                 <TimePicker
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:timePickerMode="spinner"
-                        android:id="@+id/timePicker2" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:timePickerMode="spinner"
+                    android:id="@+id/timePicker2" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -240,7 +238,6 @@
 
             </LinearLayout>
         </ScrollView>
-
     </LinearLayout>
 
 </RelativeLayout>
