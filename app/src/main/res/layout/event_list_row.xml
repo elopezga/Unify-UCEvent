@@ -83,4 +83,10 @@
         android:layout_centerHorizontal="true"
         android:onClick="viewEvent"
         android:layout_below="@+id/location_of_event" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_pos_in_list"
+        android:visibility="invisible"/>
 </RelativeLayout>
