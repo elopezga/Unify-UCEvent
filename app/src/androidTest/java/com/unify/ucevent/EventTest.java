@@ -4,7 +4,6 @@ import android.test.InstrumentationTestCase;
 
 import com.parse.Parse;
 import com.parse.ParseUser;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
