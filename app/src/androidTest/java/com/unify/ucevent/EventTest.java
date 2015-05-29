@@ -4,7 +4,6 @@ import android.test.InstrumentationTestCase;
 
 import com.parse.Parse;
 import com.parse.ParseUser;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -142,77 +141,117 @@ public class EventTest extends InstrumentationTestCase {
     // Test Setter Methods of Event class
     @Test
     public void testSetTitle() {
-
+        String ttl = "title";
+        event.setTitle(ttl);
+        assertEquals(ttl, event.getTitle());
     }
 
     @Test
     public void testSetLocation() {
-
+        String loc = "location";
+        event.setLocation(loc);
+        assertEquals(loc, event.getLocation());
     }
 
     @Test
     public void testSetDate() {
-
+        int month = 1;
+        int day = 1;
+        int year = 1;
+        event.setDate(month, day, year);
+        assertEquals(month, event.getDateMonth());
+        assertEquals(day, event.getDateDay());
+        assertEquals(year, event.getDateYear());
     }
 
     @Test
     public void testSetDateMonth() {
-
+        int month = 2;
+        event.setDateMonth(month);
+        assertEquals(month, event.getDateMonth());
     }
 
     @Test
     public void testSetDateDay() {
-
+        int day = 2;
+        event.setDateDay(day);
+        assertEquals(day, event.getDateDay());
     }
 
     @Test
     public void testSetDateYear() {
-
+        int year = 2;
+        event.setDateYear(year);
+        assertEquals(year, event.getDateYear());
     }
 
     @Test
     public void testSetTimes() {
-
+        int startH = 3;
+        int startM = 3;
+        int endH = 4;
+        int endM = 4;
+        event.setTimes(startH, startM, endH, endM);
+        assertEquals(startH, event.getStartHour());
+        assertEquals(startM, event.getStartMinute());
+        assertEquals(endH, event.getEndHour());
+        assertEquals(endM, event.getEndMinute());
     }
 
     @Test
     public void testSetStartHour() {
-
+        int startH = 5;
+        event.setStartHour(startH);
+        assertEquals(startH, event.getStartHour());
     }
 
     @Test
     public void testSetStartMinute() {
-
+        int startM = 5;
+        event.setStartMinute(startM);
+        assertEquals(startM, event.getStartMinute());
     }
 
     @Test
     public void testSetEndHour() {
-
+        int endH = 6;
+        event.setEndHour(endH);
+        assertEquals(endH, event.getEndHour());
     }
 
     @Test
     public void testSetEndMinute() {
-
+        int endM = 6;
+        event.setEndMinute(endM);
+        assertEquals(endM, event.getEndMinute());
     }
 
     @Test
     public void testSetNumGoing() {
-
+        int numG = 9;
+        event.setNumGoing(numG);
+        assertEquals(numG, event.getNumGoing());
     }
 
     @Test
     public void testSetDescription() {
-
+        String desc = "setDescription";
+        event.setDescription(desc);
+        assertEquals(desc, event.getDescription());
     }
 
     @Test
     public void testSetCategory() {
-
+        String cate = "setCategory";
+        event.setCategory(cate);
+        assertEquals(cate, event.getCategory());
     }
 
     @Test
     public void testSetContact() {
-
+        String cont = "setContact";
+        event.setContact(cont);
+        assertEquals(cont, event.getContact());
     }
 
 }

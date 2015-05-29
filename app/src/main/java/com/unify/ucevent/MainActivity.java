@@ -13,10 +13,13 @@ import android.content.Intent;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.parse.*;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -171,6 +174,7 @@ public class MainActivity extends ListActivity {
         // Cleaner version of querying!
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
         query.whereGreaterThanOrEqualTo("NumGoing", 0);
+        query.orderByDescending("NumGoing");
 
         try {
             Globals.EventList = (ArrayList)query.find();
@@ -230,6 +234,10 @@ public class MainActivity extends ListActivity {
             // Exception handle
         }
 
+        for( Event evnt : Globals.MyEventList){
+
+        }
+
     }
 
 
@@ -272,8 +280,10 @@ public class MainActivity extends ListActivity {
 
     public void viewEvent(View view) {
         Intent intent = new Intent(this, Event_Detail.class);
-        TextView text = (TextView) findViewById(R.id.name_of_event);
+        TextView text = (TextView)((RelativeLayout) (view.getParent())).findViewById(R.id.event_pos_in_list);
         String message = text.getText().toString();
+        //TextView text = (TextView) findViewById(R.id.name_of_event);
+        //String message = text.getText().toString();
         intent.putExtra(EXTRA_MESSAGE,message);
         startActivity(intent);
     }

@@ -65,6 +65,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
             TextView date = (TextView) v.findViewById(R.id.date_of_event);
             TextView time = (TextView) v.findViewById(R.id.time_of_event);
             TextView location = (TextView) v.findViewById(R.id.location_of_event);
+            TextView listpos = (TextView) v.findViewById(R.id.event_pos_in_list);
             //TextView description = (TextView) v.findViewById(R.id.description_of_event);
 
 
@@ -76,6 +77,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
             String eTime = writeTime(e);
             time.setText(eTime);
             location.setText(e.getString("Location"));
+            listpos.setText(Integer.toString(position));
             //description.setText(e.getString("Description"));
         }
 
