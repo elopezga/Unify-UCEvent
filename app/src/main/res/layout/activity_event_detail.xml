@@ -58,7 +58,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="143dp"
         android:background="#ffffffff"
-        android:layout_alignTop="@+id/frameLayout4">
+        android:layout_alignTop="@+id/frameLayout4"
+        android:id="@+id/frameLayout6">
 
         <TextView
             android:layout_width="match_parent"
@@ -105,14 +106,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Title: BBQ at Edgar&apos;s"
+            android:text="Title: BBQ at Edgar's"
             android:id="@+id/textView17"
             android:layout_gravity="left|top"
             android:textSize="@dimen/abc_text_size_display_1_material"
             android:textColor="#ff000000" />
 
         <Button
-            android:layout_width="130dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Going!"
             android:id="@+id/button3"
@@ -126,7 +127,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="__ Attending!"
+            android:text="80 Attending!"
             android:id="@+id/button4"
             android:layout_gravity="left|bottom"
             android:textSize="@dimen/abc_text_size_large_material"
@@ -142,7 +143,8 @@
         android:background="#ff2689ef"
         android:layout_above="@+id/frameLayout4"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:id="@+id/frameLayout5">
 
         <TextView
             android:layout_width="wrap_content"
@@ -199,5 +201,195 @@
             android:paddingRight="10dp"
             android:paddingTop="10dp" />
     </FrameLayout>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/frameLayout5">
+
+        <TextView android:id="@+id/details_event_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:typeface="monospace"
+            android:textSize="30sp"
+            android:textColor="#000000"
+            android:text="Kickback at Edgar's!"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_event_title"
+            android:id="@+id/details_button_viewgroup"
+            android:paddingLeft="65dp"
+            android:paddingRight="65dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_going"
+                android:text="Going"
+                android:layout_below="@+id/details_event_title"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="right|center_vertical"
+                android:background="@color/going"
+                android:padding="10dp"
+                android:textColor="#FFFFFF"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_attending"
+                android:text="80 Attending!"
+                android:layout_below="@+id/details_event_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="#9900FF"
+                android:layout_gravity="left|center_vertical"
+                android:padding="10dp"
+                android:textColor="#FFFFFF"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_button_viewgroup"
+            android:gravity="center"
+            android:id="@+id/details_date_viewgroup"
+            android:layout_marginLeft="-45dp"
+            android:layout_marginStart="-45dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_access_time_black_24dp"
+                android:layout_margin="2.5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_day"
+                android:text="Friday"
+                android:layout_margin="2.5dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_month"
+                android:text="May"
+                android:layout_margin="2.5dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_daynum"
+                android:text="1st"
+                android:layout_margin="2.5dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="at"
+                android:layout_margin="2.5dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_time"
+                android:text="9 PM"
+                android:layout_margin="2.5dp"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/details_location_viewgroup"
+            android:layout_below="@+id/details_date_viewgroup"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:layout_margin="2.5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_location"
+                android:text="9500 Gilman Dr, La Jolla, CA 92093"
+                android:layout_margin="2.5dp"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description of the Event"
+            android:layout_below="@+id/details_location_viewgroup"
+            android:id="@+id/details_description_text"
+            android:layout_margin="10dp"
+            android:textSize="28sp"/>
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true">
+
+            <!-- Only show this button if you are the owner of the event -->
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_editevent"
+                android:text="Edit Event"
+                android:layout_above="@+id/details_goback"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#CCCCCC"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:visibility="visible"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_goback"
+                android:text="Go Back to Events"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                android:background="#33CCFF"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
 
 </RelativeLayout>

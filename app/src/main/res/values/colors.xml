@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="not_going" type="color">#6666FF</item>
+    <item name="going" type="color">#FFCC00</item>
+</resources>
