@@ -53,4 +53,9 @@ public class settings extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK); // Clears all previous activities
         startActivity(intent);
     }
+
+    public void goToNewEvent(View view){
+        Intent intent = new Intent(this, EventActivity.class);
+        startActivity(intent);
+    }
 }
