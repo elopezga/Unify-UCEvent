@@ -1,7 +1,9 @@
 package com.unify.ucevent;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -148,4 +150,40 @@ public class EventActivity extends Activity {
         }
     }
 
+
+    /* For pop-up confirmation when exiting event page via back button */
+    
+    @Override
+    public void onBackPressed() {
+        EditText title = (EditText)findViewById(R.id.event_title);
+        EditText description = (EditText)findViewById(R.id.event_description);
+        EditText location = (EditText)findViewById(R.id.event_location);
+
+        if( title.getText().toString().length()>0 || description.getText().toString().length()>0 ||
+                location.getText().toString().length()>0 ) {
+
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Abandon New Event")
+                    .setMessage("Are you sure you want to abandon your new event?")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        }
+        else {
+            finish();
+        }
+    }
+
+    public void changeSettings(View view) {
+        Intent intent = new Intent(this, settings.class);
+        startActivity(intent);
+
+    }
 }

@@ -6,7 +6,8 @@
     android:paddingRight="@dimen/com_parse_ui_horizontal_margin"
     android:paddingBottom="@dimen/com_parse_ui_vertical_margin"
     android:gravity="center"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="#ff2397f3">
 
     <include
         layout="@layout/com_parse_ui_parse_login_form"
