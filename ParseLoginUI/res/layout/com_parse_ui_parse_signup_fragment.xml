@@ -11,7 +11,7 @@
 
     <include
         layout="@layout/com_parse_ui_parse_login_app_logo"
-        android:layout_width="297dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.5" />
 
