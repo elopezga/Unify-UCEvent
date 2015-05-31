@@ -71,7 +71,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
             // Assign text to each textview
             name.setText(e.getString("Title"));
-            numAttend.setText(Integer.toString(e.getInt("NumGoing")) );
+            numAttend.setText(Integer.toString(e.getInt("NumGoing")) + " attending");
             String eDate = e.getInt("DateMonth") + "/" + e.getInt("DateDay") + "/" + e.getInt("DateYear");
             date.setText(eDate);
             String eTime = writeTime(e);

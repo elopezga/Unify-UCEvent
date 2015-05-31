@@ -47,7 +47,9 @@
             android:background="#00ffffff"
             android:text="+"
             android:textSize="40sp"
-            android:onClick="goToNewEvent"/>
+            android:onClick="goToNewEvent"
+            android:clickable="false"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
