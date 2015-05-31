@@ -89,7 +89,7 @@ public class MainActivity extends ListActivity {
     }
 
     @Override
-    protected void onListItemClick(ListView list, View view, int position, long id){
+    protected void onListItemClick(ListView list, View view, int position, long id) {
         super.onListItemClick(list, view, position, id);
 
         //Do what you want
@@ -120,14 +120,14 @@ public class MainActivity extends ListActivity {
         return super.onOptionsItemSelected(item);
     }*/
 
-    public void openEvent(View view){
+    public void openEvent(View view) {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
     }
     
 
     // Get all events within the criteria
-    public void getEvents(){
+    public void getEvents() {
 
         /*
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
@@ -185,7 +185,7 @@ public class MainActivity extends ListActivity {
     }
 
     // Get user's posted events
-    public void getMyEvents(){
+    public void getMyEvents() {
 
         /*
         ParseQuery<Event> query = ParseQuery.getQuery(Event.class);
@@ -247,7 +247,7 @@ public class MainActivity extends ListActivity {
         setListAdapter(myAdapter);
     }*/
 
-    public void updateListView(View view){
+    public void updateListView(View view) {
         getEvents();
         /*ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, R.layout.event_list_row,
                 R.id.name_of_event, listvalues);*/
@@ -268,12 +268,12 @@ public class MainActivity extends ListActivity {
         setListAdapter(myAdapter);
     }
 
-    public void goTosettings(View view){
+    public void goTosettings(View view) {
         Intent intent = new Intent(this, settings.class);
         startActivity(intent);
     }
 
-    public void goToNewEvent(View view){
+    public void goToNewEvent(View view) {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
     }

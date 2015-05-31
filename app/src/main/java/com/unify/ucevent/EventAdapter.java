@@ -1,7 +1,7 @@
 package com.unify.ucevent;
 
 /**
- * Created by sandra on 5/24/15.
+ * Created by Sandra on 5/24/15.
  */
 import java.util.ArrayList;
 

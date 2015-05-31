@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import static java.security.AccessController.getContext;
+
 
 public class Event_Detail extends Activity {
 
@@ -28,7 +30,7 @@ public class Event_Detail extends Activity {
         int pos = Integer.parseInt(message); // Hold clicked event position in EventList
         Event clkdEvent = Globals.EventList.get(pos);
 
-        setContentView(R.layout.activity_event_detail);
+        //setContentView(R.layout.activity_event_detail);
         // blah
         final LayoutInflater factory = getLayoutInflater();
         final View vw = factory.inflate(R.layout.activity_event_detail, null);
@@ -52,15 +54,15 @@ public class Event_Detail extends Activity {
         //setContentView(textView);
 
         //title.setText( clkdEvent.getString("Title") );
-        title.setText( "Test Event" );
+        title.setText("Test Event");
         //day.setText( clkdEvent.getString() );
         //month.setText( clkdEvent.getString("DateMonth") );
         //location.setText( clkdEvent.getString("Location") );
         //description.setText( clkdEvent.getString("Description") );
         //attending.setText( clkdEvent.getString("NumGoing").concat(" Attending!") );
 
-        setContentView(textView);
-        setContentView(R.layout.activity_event_detail);
+        //setContentView(textView);
+        //setContentView(R.layout.activity_event_detail);
     }
 
 
