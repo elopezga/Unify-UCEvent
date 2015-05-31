@@ -1,5 +1,6 @@
 package com.unify.ucevent;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -15,7 +16,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 
-public class Event_Detail extends ActionBarActivity {
+public class Event_Detail extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +59,8 @@ public class Event_Detail extends ActionBarActivity {
         //description.setText( clkdEvent.getString("Description") );
         //attending.setText( clkdEvent.getString("NumGoing").concat(" Attending!") );
 
-        //setContentView(textView);
-        //setContentView(R.layout.activity_event_detail);
+        setContentView(textView);
+        setContentView(R.layout.activity_event_detail);
     }
 
 
