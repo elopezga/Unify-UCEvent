@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -19,7 +18,7 @@ import com.parse.ParseUser;
 
 /* ACTIVITY TO MAKE NEW EVENT */
 
-public class EventActivity extends Activity /*ActionBarActivity*/ {
+public class EventActivity extends Activity {
 
     //Event event = Globals.event;
 
@@ -30,25 +29,6 @@ public class EventActivity extends Activity /*ActionBarActivity*/ {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event);
-
-        //ParseObject.registerSubclass(Event.class);
-        //Parse.initialize(this,PARSE_APP_ID,PARSE_CLIENT_KEY);
-        //event = new Event();
-        //event = new Event();
-        //event.put("Title","bullshit");
-        /*uploadData(event);
-        setContent(event);
-        event.saveInBackground();
-
-
-        Button submitButton = (Button) findViewById(R.id.submit_button);
-        submitButton.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                uploadData(event);
-            }
-        }); */
-
     }
 
 
@@ -161,9 +141,10 @@ public class EventActivity extends Activity /*ActionBarActivity*/ {
 
             // Make sure to always call saveInBackground after uploading event object!!
             newEvent.saveInBackground();
-
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            setResult(RESULT_OK);
+            finish();
+            /* Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent); */
         }
     }
 

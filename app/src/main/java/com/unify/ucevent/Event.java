@@ -2,6 +2,7 @@ package com.unify.ucevent;
 
 import com.parse.*;
 
+
 /**
  * Created by Edgar on 4/26/2015.
  * Author: Edgar Lopez
@@ -11,7 +12,7 @@ import com.parse.*;
  * database transactions. 2) Makes event data available for UI purposes.
  */
 @ParseClassName("Event")
-public class Event extends ParseObject{
+public class Event extends ParseObject {
     private String title;
     private String location;
     private int dateMonth;
@@ -41,7 +42,7 @@ public class Event extends ParseObject{
         endHour = 0;
         endMinute = 0;
         numGoing = -1;
-        description = "Just do you, man";
+        description = "";
         category = "You";
         author = ParseUser.getCurrentUser();
         contact = "Test@email.com"; // Use bottom code for deployment!!!

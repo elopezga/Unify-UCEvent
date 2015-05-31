@@ -16,4 +16,5 @@ public class Globals {
     public static Event event = new Event();
     public static ArrayList<Event> EventList = new ArrayList<Event>();
     public static ArrayList<Event> MyEventList = new ArrayList<Event>();
+    public static ArrayList<Event> CurrList;
 }
