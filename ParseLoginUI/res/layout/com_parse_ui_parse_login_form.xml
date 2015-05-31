@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/ParseLoginUI.EditText"
-        android:hint="@string/com_parse_ui_username_input_hint" />
+        android:hint="@string/com_parse_ui_username_input_hint"
+        android:textColor="#ffffffff" />
 
     <EditText
         android:id="@+id/login_password_input"
@@ -23,7 +24,8 @@
         android:fontFamily="sans-serif"
         android:hint="@string/com_parse_ui_password_input_hint"
         android:inputType="textPassword"
-        android:selectAllOnFocus="true" />
+        android:selectAllOnFocus="true"
+        android:textColor="#ffffffff" />
 
     <LinearLayout
         android:id="@+id/parse_buttons"
@@ -35,14 +37,17 @@
             android:id="@+id/parse_login_button"
             style="@style/ParseLoginUI.Button"
             android:layout_weight="0.5"
-            android:text="@string/com_parse_ui_parse_login_button_label" />
+            android:text="@string/com_parse_ui_parse_login_button_label"
+            android:background="#ffffffff"
+            android:textColor="#212121" />
 
         <Button
             android:id="@+id/parse_signup_button"
             style="@style/ParseLoginUI.Button"
             android:layout_marginLeft="@dimen/com_parse_ui_small_horizontal_spacing"
             android:layout_weight="0.5"
-            android:text="@string/com_parse_ui_parse_signup_button_label" />
+            android:text="@string/com_parse_ui_parse_signup_button_label"
+            android:background="#ffffffff" />
     </LinearLayout>
 
     <Button
@@ -50,5 +55,7 @@
         style="@style/ParseLoginUI.HelpButton"
         android:layout_marginTop="@dimen/com_parse_ui_small_vertical_spacing"
         android:layout_marginBottom="@dimen/com_parse_ui_small_vertical_spacing"
-        android:text="@string/com_parse_ui_forgot_password_button_label" />
+        android:text="@string/com_parse_ui_forgot_password_button_label"
+        android:textColor="#ffffffff"
+        android:background="#00ffffff" />
 </LinearLayout>
