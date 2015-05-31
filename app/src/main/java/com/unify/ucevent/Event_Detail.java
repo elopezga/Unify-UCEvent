@@ -1,11 +1,18 @@
 package com.unify.ucevent;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.TextureView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 
 public class Event_Detail extends ActionBarActivity {
@@ -20,10 +27,38 @@ public class Event_Detail extends ActionBarActivity {
         int pos = Integer.parseInt(message); // Hold clicked event position in EventList
         Event clkdEvent = Globals.EventList.get(pos);
 
+        setContentView(R.layout.activity_event_detail);
+        // blah
+        final LayoutInflater factory = getLayoutInflater();
+        final View vw = factory.inflate(R.layout.activity_event_detail, null);
+
         TextView textView = new TextView(this);
+        TextView title = (TextView) vw.findViewById(R.id.details_event_title);
+        TextView day = (TextView) findViewById(R.id.details_day);
+        TextView month = (TextView) findViewById(R.id.details_month);
+        TextView daynum = (TextView) findViewById(R.id.details_daynum);
+        TextView time = (TextView) findViewById(R.id.details_time);
+        TextView location = (TextView) findViewById(R.id.details_location);
+        TextView description = (TextView) findViewById(R.id.details_description_text);
+        Button attending = (Button) findViewById(R.id.details_attending);
+        Button going = (Button) findViewById(R.id.details_going);
+        Button editevent = (Button) findViewById(R.id.details_editevent);
+        Button goback = (Button) findViewById(R.id.details_goback);
+
+
         //textView.setText( Globals.EventList.get(pos).getTitle());
-        textView.setText( clkdEvent.getString("Title"));
-        setContentView(textView);
+        //textView.setText( clkdEvent.getString("Title"));
+        //setContentView(textView);
+
+        //title.setText( clkdEvent.getString("Title") );
+        title.setText( "Test Event" );
+        //day.setText( clkdEvent.getString() );
+        //month.setText( clkdEvent.getString("DateMonth") );
+        //location.setText( clkdEvent.getString("Location") );
+        //description.setText( clkdEvent.getString("Description") );
+        //attending.setText( clkdEvent.getString("NumGoing").concat(" Attending!") );
+
+        //setContentView(textView);
         //setContentView(R.layout.activity_event_detail);
     }
 
