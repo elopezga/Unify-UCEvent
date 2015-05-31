@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Name of Event"
+        android:id="@+id/name_of_event"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="# Atten"
+        android:id="@+id/attending_of_event"
+        android:layout_gravity="right"
+        android:layout_alignBottom="@+id/name_of_event"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Date"
+        android:id="@+id/date_of_event"
+        android:layout_below="@+id/name_of_event"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Time"
+        android:id="@+id/time_of_event"
+        android:layout_below="@+id/date_of_event"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Location"
+        android:id="@+id/location_of_event"
+        android:layout_below="@+id/time_of_event"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:id="@+id/edit_event_button"
+        android:layout_gravity="right"
+        android:layout_alignBottom="@+id/location_of_event"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="openEditEvent" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Event"
+        android:id="@+id/view_event_button"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:onClick="viewEvent"
+        android:layout_below="@+id/location_of_event" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_pos_in_list"
+        android:visibility="invisible"/>
+</RelativeLayout>
