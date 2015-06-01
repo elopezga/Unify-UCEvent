@@ -11,9 +11,6 @@ import android.widget.TextView;
 
 public class Event_Detail extends Activity {
 
-    private final static String AM = "AM";
-    private final static String PM = "PM";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

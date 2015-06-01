@@ -10,9 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class EventAdapter extends ArrayAdapter<Event> {
-    private final static String AM = "AM";
-    private final static String PM = "PM";
-
     // declaring our ArrayList of items
     private ArrayList<Event> objects;
     private int viewId;
