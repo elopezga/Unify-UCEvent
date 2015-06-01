@@ -1,18 +1,9 @@
 package com.unify.ucevent;
-
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
