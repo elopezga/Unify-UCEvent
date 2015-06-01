@@ -83,10 +83,17 @@
     <string name="Description">Description:</string>
     <string name="Contact">Contact:</string>
     <string name="Submit">Submit</string>
+    <string name="Save">Save</string>
     <string name="hint_location">Enter Event Location...</string>
     <string name="hint_title">Enter Event Title...</string>
     <string name="hint_desc">Enter Event Description(optional)...</string>
     <string name="hint_contact">Only specify if logged in with Facebook</string>
+
+    // use in alert dialog
+    <string name="dialog_message">Are you sure you want to delete your event?</string>
+    <string name="dialog_title">Delete Event</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
 
     <string-array name="category_list">
         <item>Greek Life</item>

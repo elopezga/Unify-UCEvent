@@ -4,60 +4,53 @@
     android:orientation="vertical"
     tools:context="com.unify.ucevent.EventActivity"
     android:clickable="false"
-    android:background="@color/background_material_dark">
+    android:background="@color/background_material_light">
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="#ff2689ef"
-        android:id="@+id/frameLayout5"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="UC Event"
-            android:id="@+id/textView14"
-            android:layout_gravity="center"
-            android:textSize="@dimen/abc_text_size_display_2_material"
-            android:paddingBottom="20dp"
-            android:textColor="#ffffffff" />
+        android:layout_alignParentStart="true"
+        android:background="#ff2397f3"
+        android:id="@+id/linearLayout">
 
         <ImageButton
-            android:layout_width="37dp"
-            android:layout_height="30dp"
-            android:id="@+id/imageButton4"
-            android:layout_gravity="left|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageButton"
+            android:contentDescription="@string/setting_ic"
             android:src="@drawable/ic_action_settings"
-            android:background="#ff2689ef"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp" />
+            android:background="#00000000"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageView"
+            android:src="@drawable/uc_event_logo"
+            android:contentDescription="@string/app_logo"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton5"
-            android:layout_gravity="right|top"
+            android:id="@+id/imageButton2"
             android:src="@drawable/ic_action_new"
-            android:background="#ff2689ef"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp" />
-    </FrameLayout>
+            android:background="#00000000"
+            android:contentDescription="@string/add_new"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="5dp" />
 
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="#FFFFFF"
-        android:layout_below="@+id/frameLayout5">
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/details_event_title"
+        <TextView android:id="@+id/name_of_event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -66,40 +59,25 @@
             android:textColor="#000000"
             android:text="Kickback at Edgar's!"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/linearLayout"/>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/details_event_title"
+            android:layout_below="@+id/name_of_event"
             android:id="@+id/details_button_viewgroup"
             android:paddingLeft="65dp"
             android:paddingRight="65dp">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/details_going"
-                android:text="Going"
-                android:layout_below="@+id/details_event_title"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="right|center_vertical"
-                android:background="@color/going"
-                android:padding="10dp"
-                android:textColor="#FFFFFF"/>
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="example number"
+                android:id="@+id/attending_of_event" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/details_attending"
-                android:text="80 Attending!"
-                android:layout_below="@+id/details_event_title"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:background="#9900FF"
-                android:layout_gravity="left|center_vertical"
-                android:padding="10dp"
-                android:textColor="#FFFFFF"/>
+
         </FrameLayout>
 
         <LinearLayout
@@ -121,33 +99,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/details_month"
-                android:text="May"
+                android:id="@+id/date_of_event"
+                android:text="Date of Event"
                 android:layout_margin="2.5dp"
                 android:textSize="20sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/details_daynum"
-                android:text="1st"
+                android:id="@+id/time_of_event"
+                android:text="Time of event"
                 android:layout_margin="2.5dp"
                 android:textSize="20sp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="at"
-                android:layout_margin="2.5dp"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/details_time"
-                android:text="9 PM"
-                android:layout_margin="2.5dp"
-                android:textSize="20sp"/>
 
         </LinearLayout>
 
@@ -172,7 +136,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/details_location"
+                android:id="@+id/location_of_event"
                 android:text="9500 Gilman Dr, La Jolla, CA 92093"
                 android:layout_margin="2.5dp"
                 android:textSize="20sp"/>
@@ -183,7 +147,7 @@
             android:layout_height="wrap_content"
             android:text="Description of the Event"
             android:layout_below="@+id/details_location_viewgroup"
-            android:id="@+id/details_description_text"
+            android:id="@+id/event_description"
             android:layout_margin="10dp"
             android:textSize="28sp"/>
 
@@ -195,20 +159,6 @@
             android:layout_centerHorizontal="true">
 
             <!-- Only show this button if you are the owner of the event -->
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/details_editevent"
-                android:text="Edit Event"
-                android:layout_above="@+id/details_goback"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:background="#CCCCCC"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:visibility="visible"/>
 
             <Button
                 android:layout_width="fill_parent"
@@ -220,7 +170,11 @@
                 android:layout_margin="5dp"
                 android:background="#33CCFF"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:onClick="Finish"/>
+
         </RelativeLayout>
-    </RelativeLayout>
+
+
+
 </RelativeLayout>

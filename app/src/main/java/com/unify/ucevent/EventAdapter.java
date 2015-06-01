@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class EventAdapter extends ArrayAdapter<Event> {
@@ -18,6 +19,9 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
     // declaring our ArrayList of items
     private ArrayList<Event> objects;
+    private int viewId;
+    private final int EDIT_LAYOUT_ID = R.layout.my_event_list_row;
+    private final int JOIN_LAYOUT_ID = R.layout.event_list_row;
 
     /* here we must override the constructor for ArrayAdapter
     * the only variable we care about now is ArrayList<Item> objects,
@@ -26,6 +30,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
     public EventAdapter(Context context, int textViewResourceId, ArrayList<Event> objects) {
         super(context, textViewResourceId, objects);
         this.objects = objects;
+        this.viewId = textViewResourceId;
     }
 
     /*
@@ -41,7 +46,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
         // to inflate it basically means to render, or show, the view.
         if (v == null) {
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.event_list_row, null);
+            v = inflater.inflate(this.viewId, null);
         }
 
 		/*
@@ -52,6 +57,18 @@ public class EventAdapter extends ArrayAdapter<Event> {
 		 * Therefore, i refers to the current Item object.
 		 */
         Event e = objects.get(position);
+        Button viewButton = (Button) v.findViewById(R.id.view_event_button);
+        viewButton.setTag(position);
+
+        // if currently using my event list
+        if( viewId == EDIT_LAYOUT_ID ){
+            Button editButton = (Button) v.findViewById(R.id.edit_event_button);
+            editButton.setTag(position);
+        } else {
+            // using regular event list, so just set joinButton
+            Button joinButton = (Button) v.findViewById(R.id.join_or_going);
+            joinButton.setTag(position);
+        }
 
         if (e != null) {
 
