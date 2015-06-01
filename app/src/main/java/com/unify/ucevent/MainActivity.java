@@ -1,4 +1,5 @@
 package com.unify.ucevent;
+
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -6,18 +7,9 @@ import android.content.Intent;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-
-
 import com.parse.*;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-//added a comment
-
 
 public class MainActivity extends ListActivity {
 

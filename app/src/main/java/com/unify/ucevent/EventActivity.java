@@ -15,8 +15,6 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.parse.ParseUser;
-
 /* ACTIVITY TO MAKE NEW EVENT */
 
 public class EventActivity extends Activity {

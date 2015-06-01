@@ -2,18 +2,11 @@ package com.unify.ucevent;
 
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TimePicker;
-
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
 import java.util.Calendar;
-
-/**
- * Created by Sandra Dai on 5/10/15.
- */
 
 public class CheckEventInput {
     private EditText title;

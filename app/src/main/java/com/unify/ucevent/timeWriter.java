@@ -1,9 +1,5 @@
 package com.unify.ucevent;
 
-
-/**
- * Created by Nick McDonald on 5/31/15.
- */
 public class timeWriter {
     // copied from eventadapter.java
     public static String writeTime(Event e){

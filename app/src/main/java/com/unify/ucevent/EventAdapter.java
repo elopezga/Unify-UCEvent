@@ -1,10 +1,6 @@
 package com.unify.ucevent;
 
-/**
- * Created by Sandra on 5/24/15.
- */
 import java.util.ArrayList;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
