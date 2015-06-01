@@ -1,7 +1,9 @@
 package com.unify.ucevent;
 
+/*
+ * This is a simple staticly-used class to format time output into 12-hour time.
+ */
 public class timeWriter {
-    // copied from eventadapter.java
     public static String writeTime(Event e){
         String eTime;
         String startmin;
@@ -26,6 +28,11 @@ public class timeWriter {
             endhour=e.getInt("EndHour")-12;
             endpm=true;
         }
+        if(starthour == 0)
+            starthour = 12;
+        if(endhour == 0)
+            endhour = 12;
+
         if(!startpm&&!endpm)
             eTime= starthour + startmin + "AM" + " to " + endhour + endmin + "AM";
         else if(!startpm&&endpm)

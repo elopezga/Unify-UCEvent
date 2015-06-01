@@ -88,7 +88,6 @@ public class EventAdapter extends ArrayAdapter<Event> {
             time.setText(eTime);
             location.setText(e.getString("Location"));
             listpos.setText(Integer.toString(position));
-            //description.setText(e.getString("Description"));
         }
 
         // the view must be returned to our activity
