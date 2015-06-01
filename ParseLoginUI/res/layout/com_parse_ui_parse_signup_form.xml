@@ -60,7 +60,7 @@
         android:hint="@string/com_parse_ui_name_input_hint"
         android:inputType="textPersonName"
         android:textColorHint="#FFFFFFFF"
-        android:textColorLink="#FFFFFFFF" />
+        android:textColor="#FFFFFFFF" />
 
     <Button
         android:id="@+id/create_account"
