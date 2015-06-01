@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/background_material_dark"
+    android:background="#ffffffff"
     android:clickable="false"
     android:orientation="vertical"
     tools:context="com.unify.ucevent.settings">
@@ -170,7 +170,9 @@
             android:layout_height="68dp"
             android:text="@string/save_settings"
             android:id="@+id/save_settings_button"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="#ff2397f3"
+            android:textColor="#ffffffff" />
 
         <Button
             android:layout_width="fill_parent"
@@ -178,7 +180,9 @@
             android:text="Logout"
             android:id="@+id/logout_button"
             android:layout_gravity="center_horizontal|bottom"
-            android:onClick="logout"/>
+            android:onClick="logout"
+            android:background="#ff2397f3"
+            android:textColor="#ffffffff" />
     </FrameLayout>
 
 
