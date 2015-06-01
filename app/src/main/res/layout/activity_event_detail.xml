@@ -55,27 +55,28 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:typeface="monospace"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:textColor="#000000"
             android:text="Kickback at Edgar's!"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_below="@+id/linearLayout"/>
+            android:layout_below="@+id/linearLayout"
+            android:textStyle="bold" />
 
         <FrameLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name_of_event"
             android:id="@+id/details_button_viewgroup"
-            android:paddingLeft="65dp"
-            android:paddingRight="65dp">
+            android:foregroundGravity="left">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="example number"
-                android:id="@+id/attending_of_event" />
+                android:id="@+id/attending_of_event"
+                android:gravity="left|center" />
 
 
         </FrameLayout>
@@ -84,11 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/details_button_viewgroup"
-            android:gravity="center"
-            android:id="@+id/details_date_viewgroup"
-            android:layout_marginLeft="-45dp"
-            android:layout_marginStart="-45dp"
-            android:layout_marginTop="10dp">
+            android:gravity="left|center|fill_vertical"
+            android:id="@+id/details_date_viewgroup">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -118,14 +116,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="top|left|center|fill_vertical"
             android:id="@+id/details_location_viewgroup"
             android:layout_below="@+id/details_date_viewgroup"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginStart="0dp"
+            android:paddingLeft="-3dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -139,7 +136,8 @@
                 android:id="@+id/location_of_event"
                 android:text="9500 Gilman Dr, La Jolla, CA 92093"
                 android:layout_margin="2.5dp"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:layout_gravity="top|left|bottom|right" />
         </LinearLayout>
 
         <TextView
