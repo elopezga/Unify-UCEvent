@@ -23,6 +23,7 @@ public class Event_Detail extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_event_detail);
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         // This currently pulls the title of the event but I don't know how to pull the id
@@ -33,11 +34,13 @@ public class Event_Detail extends Activity {
         //setContentView(R.layout.activity_event_detail);
         // blah
         final LayoutInflater factory = getLayoutInflater();
-        final View vw = factory.inflate(R.layout.activity_event_detail, null);
+        //final View vw = factory.inflate(R.layout.activity_event_detail, null);
+        /*LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        v = inflater.inflate(R.layout.event_list_row, null);*/
 
         TextView textView = new TextView(this);
-        TextView title = (TextView) vw.findViewById(R.id.details_event_title);
-        TextView day = (TextView) findViewById(R.id.details_day);
+        TextView title = (TextView) findViewById(R.id.details_event_title);
+        //TextView day = (TextView) findViewById(R.id.details_day);
         TextView month = (TextView) findViewById(R.id.details_month);
         TextView daynum = (TextView) findViewById(R.id.details_daynum);
         TextView time = (TextView) findViewById(R.id.details_time);
@@ -53,15 +56,14 @@ public class Event_Detail extends Activity {
         //textView.setText( clkdEvent.getString("Title"));
         //setContentView(textView);
 
-        //title.setText( clkdEvent.getString("Title") );
-        title.setText("Test Event");
-        //day.setText( clkdEvent.getString() );
-        //month.setText( clkdEvent.getString("DateMonth") );
-        //location.setText( clkdEvent.getString("Location") );
-        //description.setText( clkdEvent.getString("Description") );
-        //attending.setText( clkdEvent.getString("NumGoing").concat(" Attending!") );
+        title.setText( clkdEvent.getString("Title"));
+        month.setText( Integer.toString(clkdEvent.getInt("DateMonth")));
+        location.setText( clkdEvent.getString("Location") );
+        description.setText( clkdEvent.getString("Description") );
+        attending.setText( Integer.toString(clkdEvent.getInt("NumGoing")) + " Attending!" );
 
         //setContentView(textView);
+        //setContentView(R.layout.activity_event_detail);
         //setContentView(R.layout.activity_event_detail);
     }
 
