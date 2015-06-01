@@ -46,14 +46,14 @@ public class RetrieveEventInputTest extends InstrumentationTestCase{
     public void testGetTitle() throws Exception {
 
         String title = retrieveEventInput.getTitle();
-        Assert.assertEquals("", title);
+        Assert.assertEquals(null, title);
     }
 
     @Test
     public void testGetDescription() throws Exception {
 
         String description = retrieveEventInput.getDescription();
-        Assert.assertEquals("", description);
+        Assert.assertEquals(null, description);
     }
 
     @Test
