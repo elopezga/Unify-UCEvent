@@ -25,7 +25,7 @@ public class RetrieveEventInputTest extends InstrumentationTestCase{
     String description = "play beer pong";
     String contact = "9999999";
     int year = 2004;
-    int month = 12;
+    int month = 11; // 0-11
     int day = 31;
     int hourStart = 10;
     int hourEnd = 6;
@@ -112,7 +112,7 @@ public class RetrieveEventInputTest extends InstrumentationTestCase{
     public void testGetEventMonth() throws Exception {
 
         int month = retrieveEventInput.getEventMonth();
-        assertEquals(12, month);
+        assertEquals(11, month);
     }
 
     @Test

@@ -253,5 +253,4 @@ public class EventTest extends InstrumentationTestCase {
         event.setContact(cont);
         assertEquals(cont, event.getContact());
     }
-
 }
