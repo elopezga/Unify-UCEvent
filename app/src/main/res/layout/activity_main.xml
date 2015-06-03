@@ -39,7 +39,9 @@
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:contentDescription="@string/app_logo"
-            android:src="@drawable/uc_event_logo" />
+            android:src="@drawable/uc_event_logo"
+            android:onClick="goToNewEvent"
+            android:nestedScrollingEnabled="false" />
 
         <Button
             android:id="@+id/new_event"
@@ -52,7 +54,6 @@
             android:text="+"
             android:textSize="40sp"
             android:onClick="goToNewEvent"
-            android:clickable="false"
             android:textColor="#FFFFFF" />
 
     </LinearLayout>

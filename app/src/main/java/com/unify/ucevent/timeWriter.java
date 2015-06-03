@@ -43,5 +43,4 @@ public class timeWriter {
             eTime= starthour + startmin + "PM" + " to " + endhour + endmin + "PM";
         return eTime;
     }
-
 }

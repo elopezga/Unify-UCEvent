@@ -55,4 +55,6 @@ public class settings extends Activity {
         Intent intent = new Intent(this, EventActivity.class);
         startActivity(intent);
     }
+
+
 }

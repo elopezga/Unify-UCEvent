@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -11,20 +11,31 @@
         android:layout_height="wrap_content"
         style="@style/ParseLoginUI.TextView"
         android:gravity="center"
-        android:text="@string/com_parse_ui_login_help_instructions" />
+        android:text="@string/com_parse_ui_login_help_instructions"
+        android:layout_above="@+id/login_help_email_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/login_help_email_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/com_parse_ui_xlarge_vertical_spacing"
         android:hint="@string/com_parse_ui_login_help_email_input_hint"
-        android:inputType="textEmailAddress"></EditText>
+        android:inputType="textEmailAddress"
+        android:textColor="#ffffffff"
+        android:textColorHint="#ffffffff"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"></EditText>
 
     <Button
         android:id="@+id/login_help_submit"
         style="@style/ParseLoginUI.Button"
-        android:layout_marginTop="@dimen/com_parse_ui_xlarge_vertical_spacing"
-        android:text="@string/com_parse_ui_login_help_submit_button_label" />
-</LinearLayout>
+        android:text="@string/com_parse_ui_login_help_submit_button_label"
+        android:background="#ffffffff"
+        android:textColor="#212121"
+        android:layout_below="@+id/login_help_email_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
 <!-- From: file:/Users/nmcdonald/Desktop/Unify-UCEvent/ParseLoginUI/res/layout/com_parse_ui_parse_login_help_form.xml --><!-- From: file:/Users/nmcdonald/Desktop/Unify-UCEvent/ParseLoginUI/build/intermediates/bundles/debug/res/layout/com_parse_ui_parse_login_help_form.xml -->

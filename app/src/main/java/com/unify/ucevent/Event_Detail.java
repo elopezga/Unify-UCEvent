@@ -71,4 +71,14 @@ public class Event_Detail extends Activity {
     public void Finish(View view) {
         finish();
     }
+
+    public void goTosettings(View view){
+        Intent intent = new Intent(this, settings.class);
+        startActivity(intent);
+    }
+
+    public void goToNewEvent(View view){
+        Intent intent = new Intent(this, EventActivity.class);
+        startActivity(intent);
+    }
 }

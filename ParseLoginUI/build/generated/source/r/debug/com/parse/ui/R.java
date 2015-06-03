@@ -239,18 +239,20 @@ containing a value of this type.
         public static int com_facebook_tooltip_bubble_view_bottom_pointer=0x7f090018;
         public static int com_facebook_tooltip_bubble_view_text_body=0x7f090017;
         public static int com_facebook_tooltip_bubble_view_top_pointer=0x7f090015;
-        public static int create_account=0x7f09002b;
+        public static int create_account=0x7f09002d;
         public static int display_always=0x7f09000d;
-        public static int facebook_login=0x7f090024;
+        public static int facebook_login=0x7f090026;
+        public static int imageView=0x7f090025;
         public static int inline=0x7f090007;
         public static int large=0x7f09000f;
         public static int left=0x7f09000a;
+        public static int linearLayout=0x7f090024;
         public static int login_help_email_input=0x7f090022;
         public static int login_help_instructions=0x7f090021;
         public static int login_help_submit=0x7f090023;
         public static int login_password_input=0x7f09001c;
         public static int login_username_input=0x7f09001b;
-        public static int messenger_send_button=0x7f09002c;
+        public static int messenger_send_button=0x7f09002e;
         public static int never_display=0x7f09000e;
         public static int normal=0x7f090010;
         public static int open_graph=0x7f090000;
@@ -261,15 +263,15 @@ containing a value of this type.
         public static int parse_login_help=0x7f090020;
         public static int parse_signup_button=0x7f09001f;
         public static int right=0x7f09000b;
-        public static int signup_confirm_password_input=0x7f090028;
-        public static int signup_email_input=0x7f090029;
-        public static int signup_name_input=0x7f09002a;
-        public static int signup_password_input=0x7f090027;
-        public static int signup_username_input=0x7f090026;
+        public static int signup_confirm_password_input=0x7f09002a;
+        public static int signup_email_input=0x7f09002b;
+        public static int signup_name_input=0x7f09002c;
+        public static int signup_password_input=0x7f090029;
+        public static int signup_username_input=0x7f090028;
         public static int small=0x7f090011;
         public static int standard=0x7f090005;
         public static int top=0x7f090008;
-        public static int twitter_login=0x7f090025;
+        public static int twitter_login=0x7f090027;
         public static int unknown=0x7f090002;
     }
     public static final class layout {
