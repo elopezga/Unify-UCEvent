@@ -117,5 +117,7 @@
     <string name="username">Username</string>
     <string name="save_settings">Save Settings and Go Back</string>
     <string name="title_activity_event_detail" />
+    <string name="new_password">New Password</string>
+    <string name="curr_password">Current Password</string>
 
 </resources>

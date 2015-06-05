@@ -67,10 +67,10 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/email"
-            android:id="@+id/textView9"
+            android:id="@+id/text_email"
             android:layout_marginTop="10dp"
             android:textSize="@dimen/abc_text_size_large_material"
-            android:paddingLeft="10dp"
+            android:paddingLeft="0dp"
             android:paddingRight="10dp" />
 
         <EditText
@@ -78,9 +78,9 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editText4"
+            android:id="@+id/update_email"
             android:layout_gravity="center_vertical|left|top"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:textColor="#ff000000"
             android:paddingLeft="10dp"
             android:paddingRight="10dp" />
@@ -100,16 +100,16 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/prompt_username"
-            android:id="@+id/textView10"
-            android:layout_marginTop="5dp"
+            android:id="@+id/username_text"
+            android:layout_marginTop="10dp"
             android:textSize="@dimen/abc_text_size_large_material" />
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText5"
+            android:id="@+id/update_username"
             android:layout_gravity="left|top"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:inputType="text"
             android:textColor="#ff000000" />
     </FrameLayout>
@@ -131,7 +131,7 @@
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/frameLayout9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:paddingLeft="10dp"
@@ -140,15 +140,43 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/prompt_set_password_again"
+            android:text="@string/curr_password"
             android:id="@+id/textView12"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textSize="@dimen/abc_text_size_large_material" />
 
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/editText7"
+            android:id="@+id/curr_password"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="40dp"
+            android:inputType="textPassword"
+            android:textColor="#ff000000" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout8"
+        android:id="@+id/frameLayout9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_password"
+            android:id="@+id/textView13"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/abc_text_size_large_material" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/update_password"
             android:layout_gravity="left|top"
             android:layout_marginTop="40dp"
             android:inputType="textPassword"
@@ -191,35 +219,10 @@
             android:focusable="false"
             android:layout_marginTop="0dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp" />
+            android:paddingRight="10dp"
+            android:onClick="updateAccount"
+            />
     </FrameLayout>
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/prompt_password"
-        android:id="@+id/textView11"
-        android:textSize="@dimen/abc_text_size_large_material"
-        android:layout_gravity="left|top"
-        android:layout_below="@+id/frameLayout8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="0dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText6"
-        android:layout_gravity="left|top"
-        android:inputType="textPassword"
-        android:layout_below="@+id/textView11"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="10dp"
-        android:textColor="#ff000000"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
 
 
 </RelativeLayout>

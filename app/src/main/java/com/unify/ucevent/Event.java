@@ -1,6 +1,7 @@
 package com.unify.ucevent;
 
 import com.parse.*;
+import java.util.ArrayList;
 
 
 /**
@@ -27,6 +28,7 @@ public class Event extends ParseObject {
     private String category;
     private ParseUser author;
     private String contact;
+    private ArrayList<ParseUser> attending;
     //private ParseACL ACL;
 
 
@@ -45,7 +47,9 @@ public class Event extends ParseObject {
         description = "";
         category = "You";
         author = ParseUser.getCurrentUser();
-        contact = "Test@email.com"; // Use bottom code for deployment!!!
+        contact = "Test@email.com";
+        attending = new ArrayList<>();
+        // Use bottom code for deployment!!!
         //contact = ParseUser.getCurrentUser().getEmail();
         //ACL = new ParseACL();
         //ACL.setWriteAccess(ParseUser.getCurrentUser(),true);
@@ -69,6 +73,7 @@ public class Event extends ParseObject {
         numGoing = 0;
         author = ParseUser.getCurrentUser();
         contact = email;
+        attending = new ArrayList<>();
     }
 
     /****************Getter Methods******************/
@@ -86,6 +91,7 @@ public class Event extends ParseObject {
     public String getCategory(){return category;}
     public ParseUser getAuthor(){ return author; }
     public String getContact(){ return contact; }
+    public ArrayList<ParseUser> getAttending() { return attending; }
 
     /****************Setter Methods*****************/
     public void setTitle(String ttl){title=ttl;}
@@ -139,6 +145,7 @@ public class Event extends ParseObject {
         put("Category",category);
         put("Author", author);
         put("Contact", contact);
+        put("Attending", attending);
         saveInBackground();
     }
 
@@ -150,5 +157,6 @@ public class Event extends ParseObject {
         description = retrieved.getString("Description");
         category = retrieved.getString("Category");
         author = retrieved.getParseUser("Author");
+        attending = (ArrayList<ParseUser>) retrieved.get("Attending");
     }
 }
