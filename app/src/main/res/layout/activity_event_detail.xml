@@ -78,7 +78,9 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="example number"
                 android:id="@+id/attending_of_event"
-                android:gravity="left|center" />
+                android:gravity="left|center"
+                android:layout_margin="2.5dp"
+                android:layout_marginLeft="5dp"/>
 
 
         </FrameLayout>
@@ -149,7 +151,7 @@
             android:layout_below="@+id/details_location_viewgroup"
             android:id="@+id/event_description"
             android:layout_margin="10dp"
-            android:textSize="28sp"/>
+            android:textSize="24sp"/>
 
         <RelativeLayout
             android:orientation="vertical"

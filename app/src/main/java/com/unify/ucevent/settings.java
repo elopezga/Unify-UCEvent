@@ -89,7 +89,7 @@ public class settings extends Activity {
             }
             else {
                 // Check if email already taken
-                ParseQuery<ParseUser> query = ParseQuery.getQuery("User");
+                ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereEqualTo("email", email.getText().toString());
                 int count = 0;
                 try {
@@ -119,8 +119,8 @@ public class settings extends Activity {
             boolean un_error = false;
 
             // Check if username already taken
-            ParseQuery<ParseUser> query = ParseQuery.getQuery("User");
-            query.whereEqualTo("username", email.getText().toString());
+            ParseQuery<ParseUser> query = ParseUser.getQuery();
+            query.whereEqualTo("username", username.getText().toString());
             int count = 0;
             try {
                 count = query.count();
@@ -203,26 +203,12 @@ public class settings extends Activity {
                     }
                 }
 
-                final boolean[] updateErr = {false};
-                ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
-                    public void done(com.parse.ParseException e) {
-                        // TODO Auto-generated method stub
-                        if (e == null) { // Success
-                        } else { // Error occurred
-                            updateErr[0] = true;
-                        }
-                    }
-                });
+                ParseUser.getCurrentUser().saveInBackground();
 
-                if( updateErr[0] == true ) {
-                    text = "Error in updating information";
-                }
                 // Display success message
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
-                if( updateErr[0] == false ) {
-                    finish(); // Finish settings activity if success
-                }
+                finish(); // Finish settings activity if success
 
             }
             else {
@@ -240,9 +226,6 @@ public class settings extends Activity {
             return; // Exit due to error
         }
 
-        /*TODO USERNAME, NEW PASSWORD, PASSWORD CHECKS
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();*/
     }
 
 }

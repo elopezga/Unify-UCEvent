@@ -92,8 +92,8 @@ public class EventAdapter extends ArrayAdapter<Event> {
             // Assign text to each textview
             final String eventTitle = e.getString("Title"); // For pop-up
             String title = e.getString("Title");
-            if( title.length()> 10 ) {
-                title = title.substring(0,10);
+            if( title.length()> 13 ) {
+                title = title.substring(0,13);
                 title = title+"...";
             }
             name.setText(title);
@@ -190,12 +190,28 @@ public class EventAdapter extends ArrayAdapter<Event> {
         return v;
     }
 
+    /*
+     * Returns the number of types of Views created by getView
+     * If adapted always returns same type of View for all items, should return 1
+     * Return objects.size() to have each view be considered different "type"
+     * Fixes bug where clicking going button in one list view object changes button
+     * in later list view objects
+     * Return 1 for case when no objects to display (objects.size() == 0 )
+     */
     @Override
     public int getViewTypeCount() {
         //Count=Size of ArrayList.
-        return objects.size();
+        if (objects.size() > 0) {
+            return objects.size();
+        }
+        else {
+            return 1;
+        }
     }
 
+    /*
+     * Returns type of View that will be created by getView for specified item
+     */
     @Override
     public int getItemViewType(int position) {
 

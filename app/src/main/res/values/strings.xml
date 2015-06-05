@@ -86,7 +86,7 @@
     <string name="Save">Save</string>
     <string name="hint_location">Enter Event Location...</string>
     <string name="hint_title">Enter Event Title...</string>
-    <string name="hint_desc">Enter Event Description(optional)...</string>
+    <string name="hint_desc">Enter Description(optional-max 140 char)</string>
     <string name="hint_contact">Only specify if logged in with Facebook</string>
 
     // use in alert dialog
